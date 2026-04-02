@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre nós | GrupoPIE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/menu.css' %}" />
+</head>
+<body class="about-page">
+  {% include 'components/menu/menu.html' %}
+
+  <main>
+    <section class="about-hero" aria-label="Sobre nós">
+      <div class="about-hero__bg"></div>
+      <div class="container about-hero__inner">
+        <div class="about-hero__content">
+          <div class="about-eyebrow"><span></span>Sobre nós</div>
+          <h1>Há 33 anos a desenvolver soluções tecnológicas</h1>
+          <p>Acreditamos que todos devem poder participar e prosperar na economia.</p>
+        </div>
+      </div>
+      <img src="{% static 'images/components/about/about-hero-photo-15ed0a.png' %}" alt="Profissional usando solução tecnológica" class="about-hero__image" />
+    </section>
+
+    <section class="about-history section">
+      <div class="container about-history__grid">
+        <div class="about-history__image-wrap">
+          <img src="{% static 'images/components/about/about-history-photo-38d9f1.png' %}" alt="Equipa GrupoPIE" class="about-history__image" />
+          <div class="about-history__lead">
+            <h3>Líder de mercado e líder tecnológico</h3>
+            <p>Estamos em constante busca pela inovação, visando proporcionar as ferramentas essenciais para a gestão abrangente do seu negócio.</p>
+            <a href="#contacto" class="btn btn-red">Entre em contacto</a>
+          </div>
+        </div>
+
+        <div class="about-history__content">
+          <div class="about-eyebrow about-eyebrow--dark"><span></span>A nossa História</div>
+          <h2>Quem é o GrupoPIE</h2>
+          <p>Fundado em 1991, o GrupoPIE destaca-se como uma empresa especializada no desenvolvimento de software e soluções para diversos setores, incluindo restauração, retalho, mobilidade, hotelaria e eventos.</p>
+          <p>O percurso da empresa teve início com o desenvolvimento do software de faturação WinRest, pioneiro na Europa como um dos primeiros softwares para o ponto de venda na área da restauração, utilizando registo por ecrã tátil. Para além disso, foi criada a plataforma de desenvolvimento PRIMUM Based, dotada da capacidade de produzir software de gestão vertical adaptado a diferentes setores de atividade.</p>
+          <p>Atualmente, o GrupoPIE oferece um vasto portfólio de soluções de gestão, abrangendo empresas de diversas dimensões e setores. A equipa especializada está pronta para desenvolver novas aplicações e módulos complementares. A presença global estende-se por três continentes, com projetos em curso em Angola, Moçambique, Cabo Verde, Espanha e Brasil.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-trust section">
+      <div class="container">
+        <div class="about-trust__title">
+          <div class="about-eyebrow about-eyebrow--dark"><span></span>Experiência</div>
+          <h2>Soluções de confiança</h2>
+        </div>
+        <div class="about-trust__cards">
+          <article class="about-trust-card">
+            <img src="{% static 'images/components/about/about-trust-icon-1.svg' %}" alt="Unidades instaladas" class="about-trust-card__icon" />
+            <h3>Unidades instaladas</h3>
+            <p>Mais de 31.000 unidades ativas e 60 mil instalações escolheram as soluções da Linha WinRest e PRIMUM para o seu negócio.</p>
+            <a href="#">Clientes referência</a>
+          </article>
+          <article class="about-trust-card">
+            <img src="{% static 'images/components/about/about-trust-icon-2.svg' %}" alt="Soluções verticais" class="about-trust-card__icon" />
+            <h3>Soluções verticais</h3>
+            <p>Desenvolvemos soluções de gestão vertical por setor de atividade, adaptadas às necessidades dos nossos clientes.</p>
+            <a href="{% url 'home' %}#solucoes">Soluções PIE</a>
+          </article>
+          <article class="about-trust-card">
+            <img src="{% static 'images/components/about/about-trust-icon-3.svg' %}" alt="Experiência e know-how" class="about-trust-card__icon" />
+            <h3>Experiência e know-how</h3>
+            <p>Investimos no desenvolvimento de tecnologia ímpar e inovadora, produzindo soluções tecnológicas únicas.</p>
+            <a href="{% url 'home' %}#produtos">Produtos PIE</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="about-contact">
+      <img src="{% static 'images/components/about/about-contact-bg-428c4f.png' %}" alt="" class="about-contact__bg" />
+      <div class="about-contact__overlay"></div>
+      <div class="container about-contact__content">
+        <h2>Contacte-nos!</h2>
+        <p>Se deseja saber mais sobre como o GrupoPIE pode apoiar o seu negócio, contacte-nos.</p>
+        <a href="#" class="btn btn-light">Entre em contacto</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <img src="{% static 'images/logo-footer.svg' %}" alt="GrupoPIE" class="footer-logo">
+        <div class="footer-contact">
+          <div><img src="{% static 'images/icon-phone.svg' %}" alt="Telefone"><span>(+351) 252 290 600</span></div>
+          <div><img src="{% static 'images/icon-mail.svg' %}" alt="Email"><span>grupopie@grupopie.com</span></div>
+        </div>
+      </div>
+
+      <div class="footer-menus">
+        <div><h4>GrupoPIE</h4><a href="{% url 'about' %}">Sobre nós</a><a href="#">Clientes</a><a href="#">Parceiros</a><a href="#">Recrutamento</a><a href="#">Contactos</a></div>
+        <div><h4>Soluções</h4><a href="{% url 'home' %}#solucoes">Restauração</a><a href="{% url 'home' %}#solucoes">Retalho</a><a href="{% url 'home' %}#solucoes">Eventos</a><a href="{% url 'home' %}#solucoes">Hotelaria</a><a href="{% url 'home' %}#solucoes">Gestão Comercial</a><a href="{% url 'home' %}#solucoes">Fidelização</a></div>
+        <div><h4>Produtos</h4><a href="{% url 'home' %}#produtos">WinRest 360</a><a href="{% url 'home' %}#produtos">Booking All</a><a href="{% url 'home' %}#produtos">PingWin FO</a><a href="{% url 'home' %}#produtos">360City FUN</a><a href="{% url 'home' %}#produtos">360City Hotel</a></div>
+        <div class="footer-cta">
+          <a href="#contacto" class="btn btn-red">Pedido de Contacto</a>
+          <p>Siga-nos</p>
+          <div class="social">
+            <img src="{% static 'images/icon-facebook.svg' %}" alt="Facebook">
+            <img src="{% static 'images/icon-instagram.svg' %}" alt="Instagram">
+            <img src="{% static 'images/icon-youtube.svg' %}" alt="YouTube">
+            <img src="{% static 'images/icon-linkedin.svg' %}" alt="LinkedIn">
+          </div>
+        </div>
+      </div>
+
+      <div class="copy">© Copyright 2024 GrupoPIE Portugal SA. Todos os direitos reservados. Política de Privacidade . Termos e Condições</div>
+    </div>
+  </footer>
+
+  <button class="chat-float" type="button">
+    <img src="{% static 'images/icon-chat.svg' %}" alt="Chat">
+    <span>Precisa de Ajuda?</span>
+  </button>
+
+  <script src="{% static 'js/components/menu.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
