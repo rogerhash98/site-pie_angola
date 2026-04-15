@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contacto | PIE Angola</title>
+  <title>Contactos | PIE Angola</title>
   <meta name="description" content="Entre em contacto com a equipa PIE Angola. Estamos em Luanda, Bairro Militar, Município de Belas.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,109 +16,148 @@
   {% include 'components/menu/menu.html' %}
 
   <main>
-    <section class="page-hero">
-      <div class="container">
-        <div class="about-eyebrow"><span></span>Contacto</div>
-        <h1>Fale com a equipa PIE Angola</h1>
-        <p>Estamos disponíveis para responder a todas as suas questões sobre as nossas soluções.</p>
+
+    <!-- ══════════════════════════════════════
+         HERO — Fale connosco
+    ══════════════════════════════════════ -->
+    <section class="contact-hero" aria-label="Contactos">
+      <div class="contact-hero__bg"></div>
+      <div class="container contact-hero__inner">
+        <div class="contact-hero__content">
+          <nav class="contact-breadcrumb" aria-label="Breadcrumb">
+            <a href="{% url 'home' %}">PIE Angola</a>
+            <span aria-hidden="true">&rsaquo;</span>
+            <span>Contactos</span>
+          </nav>
+          <h1>Fale connosco</h1>
+          <p>Estamos disponíveis para esclarecer dúvidas e encontrar a melhor solução para o seu negócio.</p>
+        </div>
+      </div>
+      <div class="contact-hero__image-wrap" aria-hidden="true">
+        <img src="{% static 'images/components/about/about-hero-photo-15ed0a.png' %}" alt="" class="contact-hero__image" />
       </div>
     </section>
 
-    <section class="section contact-section">
-      <div class="container contact-grid">
+    <!-- ══════════════════════════════════════
+         OFFICES — Escritórios
+    ══════════════════════════════════════ -->
+    <section class="offices-section" aria-labelledby="offices-heading">
+      <div class="container offices-grid">
 
-        <div class="contact-info">
-          <h2>Informações de contacto</h2>
-
-          <div class="contact-info__item">
-            <img src="{% static 'images/icon-phone.svg' %}" alt="Telefone">
-            <div>
-              <strong>Telefone</strong>
-              <a href="tel:+244926000000">(+244) 926 000 000</a>
-            </div>
-          </div>
-          <div class="contact-info__item">
-            <img src="{% static 'images/icon-mail.svg' %}" alt="Email">
-            <div>
-              <strong>Email</strong>
-              <a href="mailto:info@pieangola.com">info@pieangola.com</a>
-            </div>
-          </div>
-          <div class="contact-info__item">
-            <img src="{% static 'images/icon-phone.svg' %}" alt="Morada">
-            <div>
-              <strong>Morada</strong>
-              <address>
-                Rua A nº 8 / Rua B nº 18<br>
-                Junto ao Centro Logístico de Talatona<br>
-                Bairro Militar, Município de Belas<br>
-                Luanda — Angola
-              </address>
-            </div>
-          </div>
-
-          <div class="contact-map">
+        <div class="office-card">
+          <h3 class="office-card__title">
+            Luanda
+            <span class="office-badge">Sede PIE Angola</span>
+          </h3>
+          <address class="office-card__address">
+            Rua A nº 8 / Rua B nº 18<br>
+            Junto ao Centro Logístico de Talatona<br>
+            Bairro Militar, Município de Belas<br>
+            Luanda &mdash; Angola
+          </address>
+          <div class="office-card__map">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.0!2d13.28!3d-8.94!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBairro+Militar%2C+Belas%2C+Luanda!5e0!3m2!1spt!2sao!4v1!5m2!1spt!2sao"
-              width="100%" height="260" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade" title="PIE Angola — Luanda"></iframe>
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7884.2!2d13.2950!3d-8.9700!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a51f4e1d9f1c5a7%3A0x0!2sBairro+Militar%2C+Belas%2C+Luanda!5e0!3m2!1spt!2sao!4v1!5m2!1spt!2sao"
+              width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="PIE Angola — Luanda, Bairro Militar"></iframe>
           </div>
         </div>
 
-        <div class="contact-form-wrap">
-          <h2>Envie-nos uma mensagem</h2>
-          {% if error %}
-            <div class="form-error" role="alert">{{ error }}</div>
-          {% endif %}
-          <form class="contact-form" method="POST" action="{% url 'contact' %}">
-            {% csrf_token %}
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Nome <span aria-hidden="true">*</span></label>
-                <input type="text" id="name" name="name" required
-                  value="{{ form_data.name|default:'' }}"
-                  placeholder="O seu nome completo">
-              </div>
-              <div class="form-group">
-                <label for="company">Empresa</label>
-                <input type="text" id="company" name="company"
-                  value="{{ form_data.company|default:'' }}"
-                  placeholder="Nome da sua empresa">
-              </div>
+        <div class="office-card">
+          <h3 class="office-card__title">
+            Lisboa
+            <span class="office-badge office-badge--gray">GrupoPIE Portugal</span>
+          </h3>
+          <address class="office-card__address">
+            Rua das Marinhas do Tejo, nº 21<br>
+            3500-370 Santa Iria de Azóia<br>
+            Lisboa &mdash; Portugal
+          </address>
+          <div class="office-card__map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3108.5!2d-9.0750!3d38.8610!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ecab68ab6c14b%3A0x0!2sSanta+Iria+de+Az%C3%B3ia!5e0!3m2!1spt!2spt!4v1!5m2!1spt!2spt"
+              width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="GrupoPIE Portugal — Lisboa, Santa Iria de Azóia"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         FORM — Envie-nos uma mensagem
+    ══════════════════════════════════════ -->
+    <section class="cform-section" aria-labelledby="cform-heading">
+      <div class="container">
+
+        <div class="cform-header">
+          <h2 id="cform-heading">Envie-nos uma mensagem</h2>
+          <p>Respondemos com a maior brevidade possível</p>
+        </div>
+
+        {% if error %}
+          <div class="form-error cform-error" role="alert">{{ error }}</div>
+        {% endif %}
+
+        <form class="cform" method="POST" action="{% url 'contact' %}">
+          {% csrf_token %}
+
+          <div class="cform__grid">
+
+            <div class="cform__cell cform__cell--left">
+              <input type="text" name="name" id="name" placeholder="Nome"
+                value="{{ form_data.name|default:'' }}" required>
             </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Email <span aria-hidden="true">*</span></label>
-                <input type="email" id="email" name="email" required
-                  value="{{ form_data.email|default:'' }}"
-                  placeholder="email@empresa.com">
-              </div>
-              <div class="form-group">
-                <label for="phone">Telefone</label>
-                <input type="tel" id="phone" name="phone"
-                  value="{{ form_data.phone|default:'' }}"
-                  placeholder="(+244) 9XX XXX XXX">
-              </div>
+            <div class="cform__cell cform__cell--right">
+              <input type="text" name="company" id="company" placeholder="Empresa"
+                value="{{ form_data.company|default:'' }}">
             </div>
-            <div class="form-group form-group--full">
-              <label for="subject">Assunto</label>
-              <select id="subject" name="subject">
-                <option value="demo">Pedido de demonstração</option>
-                <option value="info">Informações sobre produtos</option>
-                <option value="support">Suporte técnico</option>
-                <option value="other">Outro</option>
+
+            <div class="cform__cell cform__cell--left">
+              <input type="tel" name="phone" id="phone" placeholder="Telefone / telemóvel"
+                value="{{ form_data.phone|default:'' }}">
+            </div>
+            <div class="cform__cell cform__cell--right">
+              <input type="email" name="email" id="email" placeholder="Email"
+                value="{{ form_data.email|default:'' }}" required>
+            </div>
+
+            <div class="cform__cell cform__cell--left">
+              <input type="text" name="subject" id="subject" placeholder="Assunto"
+                value="{{ form_data.subject|default:'' }}">
+            </div>
+            <div class="cform__cell cform__cell--right">
+              <select name="area" id="area">
+                <option value="" disabled {% if not form_data.area %}selected{% endif %}>Área de interesse</option>
+                <option value="winrest-nx" {% if form_data.area == 'winrest-nx' %}selected{% endif %}>WinRest NX Angola</option>
+                <option value="pingwin-bo" {% if form_data.area == 'pingwin-bo' %}selected{% endif %}>PingWin BO</option>
+                <option value="winrest-360" {% if form_data.area == 'winrest-360' %}selected{% endif %}>WinRest 360</option>
+                <option value="demo" {% if form_data.area == 'demo' %}selected{% endif %}>Pedido de demonstração</option>
+                <option value="outro" {% if form_data.area == 'outro' %}selected{% endif %}>Outro</option>
               </select>
             </div>
-            <div class="form-group form-group--full">
-              <label for="message">Mensagem <span aria-hidden="true">*</span></label>
-              <textarea id="message" name="message" rows="6" required
-                placeholder="Descreva como podemos ajudar...">{{ form_data.message|default:'' }}</textarea>
+
+            <div class="cform__cell cform__cell--full">
+              <textarea name="message" id="message" rows="5" placeholder="Mensagem" required>{{ form_data.message|default:'' }}</textarea>
             </div>
-            <button type="submit" class="btn btn-red btn--full">Enviar mensagem</button>
-          </form>
-        </div>
+
+          </div><!-- /.cform__grid -->
+
+          <div class="cform__footer">
+            <label class="cform__privacy">
+              <input type="checkbox" name="privacy" required>
+              <span>Li e aceito a <a href="/politica-de-privacidade/">Política de Privacidade</a></span>
+            </label>
+            <button type="submit" class="btn btn-red cform__submit">Enviar mensagem</button>
+          </div>
+
+        </form>
+
       </div>
     </section>
+
   </main>
 
   {% include 'components/footer/footer.html' %}

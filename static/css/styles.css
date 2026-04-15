@@ -1590,3 +1590,362 @@ h3,
     grid-template-columns: 1fr;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   CONTACT PAGE — Figma redesign
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Contact Hero ─────────────────────────────────────────── */
+.contact-hero {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.contact-hero__bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #c3161c 0%, #c3161c 56%, rgba(195, 22, 28, 0) 100%);
+  z-index: 1;
+}
+
+.contact-hero__image-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  z-index: 0;
+}
+
+.contact-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.contact-hero__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-hero__content {
+  max-width: 500px;
+  color: #fff;
+  padding: 64px 0;
+}
+
+.contact-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 16px;
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+}
+
+.contact-breadcrumb a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-breadcrumb a:hover {
+  color: #fff;
+}
+
+.contact-hero__content h1 {
+  color: #fff;
+  font-size: clamp(36px, 4.5vw, 56px);
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.contact-hero__content p {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 18px;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 440px;
+  font-family: Roboto, sans-serif;
+}
+
+/* ── Offices Section ──────────────────────────────────────── */
+.offices-section {
+  padding: 80px 0 72px;
+  background: #fff;
+}
+
+.offices-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.office-card__title {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: Poppins, sans-serif;
+  color: var(--title);
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.office-badge {
+  font-size: 11px;
+  font-weight: 600;
+  font-family: Inter, sans-serif;
+  background: var(--red);
+  color: #fff;
+  padding: 3px 9px;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.office-badge--gray {
+  background: #6b6b6b;
+}
+
+.office-card__address {
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text);
+  margin: 0 0 22px;
+  font-family: Roboto, sans-serif;
+}
+
+.office-card__map {
+  border-radius: 4px;
+  overflow: hidden;
+  line-height: 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.office-card__map iframe {
+  display: block;
+  width: 100%;
+  height: 260px;
+  border: 0;
+}
+
+/* ── Contact Form (cform) ─────────────────────────────────── */
+.cform-section {
+  padding: 80px 0 100px;
+  background: #fff;
+  border-top: 1px solid #efefef;
+}
+
+.cform-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.cform-header h2 {
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 700;
+  font-family: Poppins, sans-serif;
+  color: var(--title);
+  margin-bottom: 10px;
+}
+
+.cform-header p {
+  font-size: 18px;
+  color: var(--text);
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.cform-error {
+  max-width: 920px;
+  margin: 0 auto 24px;
+}
+
+.cform {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.cform__grid {
+  border: 1px solid #e0e0e0;
+}
+
+.cform__cell {
+  border-bottom: 1px solid #e0e0e0;
+  display: block;
+}
+
+.cform__cell--left {
+  float: left;
+  width: 50%;
+  border-right: 1px solid #e0e0e0;
+  box-sizing: border-box;
+}
+
+.cform__cell--right {
+  float: right;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.cform__cell--full {
+  float: none;
+  clear: both;
+  width: 100%;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* clearfix for the grid */
+.cform__grid::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.cform__cell input,
+.cform__cell select,
+.cform__cell textarea {
+  display: block;
+  width: 100%;
+  padding: 20px 22px;
+  border: none;
+  font-size: 15px;
+  font-family: Inter, sans-serif;
+  color: var(--text);
+  background: #fff;
+  transition: background 0.15s;
+  outline: none;
+}
+
+.cform__cell input::placeholder,
+.cform__cell textarea::placeholder {
+  color: #999;
+}
+
+.cform__cell select {
+  color: #999;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 12px;
+  padding-right: 44px;
+  cursor: pointer;
+}
+
+.cform__cell select option {
+  color: var(--text);
+}
+
+.cform__cell textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.cform__cell input:focus,
+.cform__cell select:focus,
+.cform__cell textarea:focus {
+  background: #fafafa;
+}
+
+/* Footer row: privacy + submit button */
+.cform__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cform__privacy {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.cform__privacy input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  accent-color: var(--red);
+  cursor: pointer;
+  margin: 0;
+}
+
+.cform__privacy a {
+  color: var(--red);
+  text-decoration: none;
+}
+
+.cform__privacy a:hover {
+  text-decoration: underline;
+}
+
+.cform__submit {
+  flex-shrink: 0;
+}
+
+/* ── Contact page responsive ──────────────────────────────── */
+@media (max-width: 900px) {
+  .offices-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contact-hero__image-wrap {
+    width: 65%;
+  }
+}
+
+@media (max-width: 680px) {
+  .contact-hero__image-wrap {
+    display: none;
+  }
+
+  .contact-hero__bg {
+    background: #c3161c;
+  }
+
+  .contact-hero__content {
+    padding: 52px 0;
+  }
+
+  .cform__cell--left,
+  .cform__cell--right {
+    float: none;
+    width: 100%;
+    border-right: none;
+  }
+
+  .cform__cell--left {
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .cform__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cform__submit {
+    align-self: flex-end;
+  }
+}
