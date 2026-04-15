@@ -11,7 +11,7 @@
       <nav id="pie-menu-nav" class="pie-menu__nav" aria-label="Navegação principal">
         <a href="{% url 'about' %}" class="pie-menu__item{% if active_menu == 'about' %} pie-menu__item--active{% endif %}">
           <span class="pie-menu__title">Sobre</span>
-          <span class="pie-menu__subtitle">o GrupoPIE</span>
+          <span class="pie-menu__subtitle">a PIE Angola</span>
           <img src="{% static 'images/components/menu/menu-chevron-about.svg' %}" alt="" aria-hidden="true" class="pie-menu__chevron" />
         </a>
         <a href="#" id="pie-menu-solutions-trigger" class="pie-menu__item{% if active_menu == 'solutions' %} pie-menu__item--active{% endif %}" aria-expanded="false">
@@ -19,48 +19,53 @@
           <span class="pie-menu__subtitle">as nossas soluções</span>
           <img src="{% static 'images/components/menu/menu-chevron-solutions.svg' %}" alt="" aria-hidden="true" class="pie-menu__chevron" />
         </a>
-        <a href="{% url 'home' %}#produtos" class="pie-menu__item">
-          <span class="pie-menu__title">Escolha</span>
-          <span class="pie-menu__subtitle">os nossos produtos</span>
+        <a href="{% url 'clients' %}" class="pie-menu__item{% if active_menu == 'clients' %} pie-menu__item--active{% endif %}">
+          <span class="pie-menu__title">Clientes</span>
+          <span class="pie-menu__subtitle">de referência</span>
           <img src="{% static 'images/components/menu/menu-chevron-products.svg' %}" alt="" aria-hidden="true" class="pie-menu__chevron" />
         </a>
-        <a href="{% url 'home' %}#casos" class="pie-menu__item">
-          <span class="pie-menu__title">Descubra</span>
-          <span class="pie-menu__subtitle">casos de sucesso</span>
+        <a href="{% url 'success_cases' %}" class="pie-menu__item{% if active_menu == 'success_cases' %} pie-menu__item--active{% endif %}">
+          <span class="pie-menu__title">Casos</span>
+          <span class="pie-menu__subtitle">de sucesso</span>
+        </a>
+        <a href="{% url 'contact' %}" class="pie-menu__item{% if active_menu == 'contact' %} pie-menu__item--active{% endif %}">
+          <span class="pie-menu__title">Contacto</span>
+          <span class="pie-menu__subtitle">fale connosco</span>
         </a>
       </nav>
 
-      <a href="#" class="pie-menu__cloud-btn">myCloud PIE</a>
+      <a href="{% url 'contact' %}" class="pie-menu__cloud-btn">Pedir Demo</a>
     </div>
   </div>
 
   <div id="pie-menu-mega" class="pie-menu__mega">
     <div class="pie-menu__container pie-menu__mega-inner">
       <div class="pie-menu__col">
-        <h3>SOLUÇÕES SETORIAIS</h3>
-        <a href="{% url 'home' %}#solucoes">Restauração e Similares</a>
-        <a href="#">Comércio e Serviços</a>
-        <a href="#">Festivais e Eventos</a>
-        <a href="#">Hotelaria</a>
-        <a href="#">Cidades Digitais</a>
+        <h3>SOLUÇÕES PARA ANGOLA</h3>
+        <a href="{% url 'solutions' %}">Restauração e Similares</a>
+        <a href="{% url 'solutions' %}">Comércio e Serviços</a>
+        <a href="{% url 'solutions' %}">Festivais e Eventos</a>
+        <a href="{% url 'solutions' %}">Hotelaria</a>
+        <a href="{% url 'solutions' %}">Cidades Digitais</a>
       </div>
 
       <div class="pie-menu__col">
         <h3>SOLUÇÕES COMPLEMENTARES</h3>
-        <a href="#">Gestão Comercial</a>
-        <a href="#">Agregador de Pedidos e Entregas</a>
-        <a href="#">Fidelização de Clientes</a>
-        <a href="#">Distribuição Alimentar</a>
-        <a href="#">Tendências de Consumo</a>
-        <a href="#">Business Intelligence</a>
-        <a href="#">Bilhética</a>
+        <a href="{% url 'solutions' %}">Gestão Comercial</a>
+        <a href="{% url 'solutions' %}">Agregador de Pedidos e Entregas</a>
+        <a href="{% url 'solutions' %}">Fidelização de Clientes</a>
+        <a href="{% url 'solutions' %}">Distribuição Alimentar</a>
+        <a href="{% url 'solutions' %}">Tendências de Consumo</a>
+        <a href="{% url 'solutions' %}">Business Intelligence</a>
+        <a href="{% url 'solutions' %}">Bilhética</a>
       </div>
 
       <div class="pie-menu__col">
-        <h3>SOLUÇÕES DE MOBILIDADE</h3>
-        <a href="#">Digitalização no atendimento</a>
-        <a href="#">Pedidos e pagamentos à mesa</a>
-        <a href="#">Faturação em mobilidade</a>
+        <h3>PRODUTOS</h3>
+        <a href="{% url 'product_winrest_nx' %}">WinRest NX Angola</a>
+        <a href="{% url 'product_pingwin_bo' %}">PingWin BO</a>
+        <a href="{% url 'solutions' %}">WinRest 360</a>
+        <a href="{% url 'solutions' %}">WinRest FO PRO</a>
       </div>
 
       <article class="pie-menu__feature">

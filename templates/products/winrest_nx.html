@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WinRest NX Angola | PIE Angola</title>
+  <meta name="description" content="WinRest NX Angola — software de gestão para restaurantes, bares, fast food e franchising. Multiplataforma, multilíngue, com conformidade fiscal angolana.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/menu.css' %}" />
+</head>
+<body class="product-page">
+  {% include 'components/menu/menu.html' %}
+
+  <main>
+    <section class="page-hero product-hero">
+      <div class="container product-hero__grid">
+        <div class="product-hero__content">
+          <div class="about-eyebrow"><span></span>Produto</div>
+          <h1>WinRest NX Angola</h1>
+          <p>O software de ponto de venda líder em Angola para restaurantes, bares, fast food, discotecas e franchising. Multiplataforma, multiprocessador e multilíngue — disponível em 20 países.</p>
+          <div class="hero__actions">
+            <a href="{% url 'contact' %}" class="btn btn-red">Pedir Demonstração</a>
+            <a href="{% url 'contact' %}" class="btn btn-soft">Falar com um especialista</a>
+          </div>
+        </div>
+        <div class="product-hero__image">
+          <img src="{% static 'images/product-winrest.png' %}" alt="WinRest NX Angola">
+        </div>
+      </div>
+    </section>
+
+    <section class="section product-overview">
+      <div class="container">
+        <div class="about-eyebrow about-eyebrow--dark"><span></span>Visão Geral</div>
+        <h2>O que é o WinRest NX Angola?</h2>
+        <div class="product-overview__grid">
+          <div class="product-overview__text">
+            <p>O <strong>WinRest NX Angola</strong> é uma solução de gestão para ponto de venda desenvolvida pela GrupoPIE Portugal e adaptada especificamente para o mercado angolano. Com mais de 33 anos de experiência no setor, o WinRest é a escolha das maiores marcas de restauração em Angola.</p>
+            <p>Disponível em duas versões — <strong>FO PRO</strong> (completo) e <strong>NX Angola</strong> (adaptado ao mercado local) — o software oferece tudo o que o seu negócio precisa, desde a faturação ao controlo de mesas, da gestão de stocks ao relatório de vendas.</p>
+          </div>
+          <div class="product-overview__highlights">
+            <div class="product-highlight">
+              <strong>20 países</strong>
+              <span>disponibilidade global</span>
+            </div>
+            <div class="product-highlight">
+              <strong>Multilíngue</strong>
+              <span>incluindo Português Angola</span>
+            </div>
+            <div class="product-highlight">
+              <strong>Multi-fiscal</strong>
+              <span>conformidade com AGT Angola</span>
+            </div>
+            <div class="product-highlight">
+              <strong>2 versões</strong>
+              <span>FO PRO e NX Angola</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section product-features">
+      <div class="container">
+        <h2>Funcionalidades principais</h2>
+        <div class="features-grid">
+          <article class="feature-card">
+            <h3>Gestão de Mesas</h3>
+            <p>Planta de sala configurável, gestão de mesas, divisão de contas e transferência entre mesas.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Faturação Eletrónica</h3>
+            <p>Emissão de faturas eletrónicas em conformidade com a legislação angolana e AGT.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Gestão de Stocks</h3>
+            <p>Controlo em tempo real de stocks, fichas técnicas de produtos e desperdícios.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Relatórios e Análise</h3>
+            <p>Dashboard de vendas, relatórios detalhados e análise de desempenho por produto e turno.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Gestão de Entregas</h3>
+            <p>Integração com delivery e take-away, gestão de pedidos online e offline.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Franchising</h3>
+            <p>Gestão multi-loja para franchisings, com central de backoffice e relatórios consolidados.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Múltiplos Pagamentos</h3>
+            <p>Aceita numerário, multibanco, cartão, TPA e métodos de pagamento locais angolanos.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Suporte Local</h3>
+            <p>Equipa técnica em Luanda para instalação, formação e suporte técnico contínuo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section product-versions">
+      <div class="container">
+        <h2>Escolha a versão certa para o seu negócio</h2>
+        <div class="versions-grid">
+          <article class="version-card">
+            <h3>WinRest FO PRO</h3>
+            <p class="version-card__desc">Versão completa para negócios de média e grande dimensão</p>
+            <ul>
+              <li>Todas as funcionalidades</li>
+              <li>Gestão multi-loja</li>
+              <li>Integração PingWin BO</li>
+              <li>API para integrações</li>
+              <li>Relatórios avançados</li>
+            </ul>
+            <a href="{% url 'contact' %}" class="btn btn-red">Pedir demo</a>
+          </article>
+          <article class="version-card version-card--highlight">
+            <span class="version-card__badge">Recomendado para Angola</span>
+            <h3>WinRest NX Angola</h3>
+            <p class="version-card__desc">Versão otimizada para o mercado angolano</p>
+            <ul>
+              <li>Conformidade fiscal AGT</li>
+              <li>Interface em Português Angola</li>
+              <li>Adaptado à conectividade local</li>
+              <li>Formação incluída</li>
+              <li>Suporte técnico em Luanda</li>
+            </ul>
+            <a href="{% url 'contact' %}" class="btn btn-red">Pedir demo</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div class="overlay"></div>
+      <div class="container cta__inner">
+        <h2>Pronto para transformar a gestão do seu restaurante em Angola?</h2>
+        <a href="{% url 'contact' %}" class="btn btn-light">Agendar demonstração gratuita</a>
+      </div>
+    </section>
+  </main>
+
+  {% include 'components/footer/footer.html' %}
+
+  <script src="{% static 'js/components/menu.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

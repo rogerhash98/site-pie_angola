@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mensagem enviada | PIE Angola</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/menu.css' %}" />
+</head>
+<body>
+  {% include 'components/menu/menu.html' %}
+
+  <main>
+    <section class="page-hero contact-success">
+      <div class="container">
+        <div class="contact-success__icon">✓</div>
+        <h1>Mensagem enviada com sucesso!</h1>
+        <p>Obrigado pelo seu contacto. A nossa equipa responderá brevemente.</p>
+        <a href="{% url 'home' %}" class="btn btn-red">Voltar à página inicial</a>
+      </div>
+    </section>
+  </main>
+
+  {% include 'components/footer/footer.html' %}
+
+  <script src="{% static 'js/components/menu.js' %}"></script>
+</body>
+</html>

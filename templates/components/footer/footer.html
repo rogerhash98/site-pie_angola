@@ -1,0 +1,66 @@
+{% load static %}
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <img src="{% static 'images/logo-footer.svg' %}" alt="PIE Angola" class="footer-logo">
+      <div class="footer-contact">
+        <div>
+          <img src="{% static 'images/icon-phone.svg' %}" alt="Telefone">
+          <span>(+244) 926 000 000</span>
+        </div>
+        <div>
+          <img src="{% static 'images/icon-mail.svg' %}" alt="Email">
+          <span>info@pieangola.com</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-menus">
+      <div>
+        <h4>PIE Angola</h4>
+        <a href="{% url 'about' %}">Sobre nós</a>
+        <a href="{% url 'clients' %}">Clientes</a>
+        <a href="{% url 'success_cases' %}">Casos de sucesso</a>
+        <a href="{% url 'contact' %}">Contactos</a>
+      </div>
+      <div>
+        <h4>Soluções</h4>
+        <a href="{% url 'solutions' %}">Restauração</a>
+        <a href="{% url 'solutions' %}">Comércio e Serviços</a>
+        <a href="{% url 'solutions' %}">Gestão Comercial</a>
+        <a href="{% url 'solutions' %}">Fidelização</a>
+      </div>
+      <div>
+        <h4>Produtos</h4>
+        <a href="{% url 'product_winrest_nx' %}">WinRest NX Angola</a>
+        <a href="{% url 'product_pingwin_bo' %}">PingWin BO</a>
+        <a href="{% url 'solutions' %}">WinRest 360</a>
+        <a href="{% url 'solutions' %}">WinRest FO PRO</a>
+      </div>
+      <div class="footer-cta">
+        <a href="{% url 'contact' %}" class="btn btn-red">Pedido de Contacto</a>
+        <p>Siga-nos</p>
+        <div class="social">
+          <a href="#" aria-label="Facebook"><img src="{% static 'images/icon-facebook.svg' %}" alt="Facebook"></a>
+          <a href="#" aria-label="Instagram"><img src="{% static 'images/icon-instagram.svg' %}" alt="Instagram"></a>
+          <a href="#" aria-label="YouTube"><img src="{% static 'images/icon-youtube.svg' %}" alt="YouTube"></a>
+          <a href="#" aria-label="LinkedIn"><img src="{% static 'images/icon-linkedin.svg' %}" alt="LinkedIn"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-address">
+      <img src="{% static 'images/icon-phone.svg' %}" alt="" aria-hidden="true">
+      <span>Rua A nº 8 / Rua B nº 18 (Junto ao Centro Logístico de Talatona), Bairro Militar, Município de Belas — Luanda, Angola</span>
+    </div>
+
+    <div class="copy">© Copyright 2024 PIE Angola — GrupoPIE Portugal SA. Todos os direitos reservados.
+      <a href="#">Política de Privacidade</a> · <a href="#">Termos e Condições</a>
+    </div>
+  </div>
+</footer>
+
+<button class="chat-float" type="button" onclick="window.location='{% url 'contact' %}'">
+  <img src="{% static 'images/icon-chat.svg' %}" alt="Chat">
+  <span>Precisa de Ajuda?</span>
+</button>

@@ -17,10 +17,27 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import about, home
+from .views import (
+    about,
+    clients,
+    contact,
+    contact_success,
+    home,
+    product_pingwin_bo,
+    product_winrest_nx,
+    solutions,
+    success_cases,
+)
 
 urlpatterns = [
     path('', home, name='home'),
     path('sobre-nos/', about, name='about'),
+    path('solucoes/', solutions, name='solutions'),
+    path('contacto/', contact, name='contact'),
+    path('clientes/', clients, name='clients'),
+    path('casos-de-sucesso/', success_cases, name='success_cases'),
+    path('produtos/winrest-nx/', product_winrest_nx, name='product_winrest_nx'),
+    path('contacto/obrigado/', contact_success, name='contact_success'),
+    path('produtos/pingwin-bo/', product_pingwin_bo, name='product_pingwin_bo'),
     path('admin/', admin.site.urls),
 ]

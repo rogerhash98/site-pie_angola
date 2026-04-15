@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casos de Sucesso | PIE Angola</title>
+  <meta name="description" content="Casos de sucesso da PIE Angola — como as nossas soluções estão a transformar a restauração em Angola.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/menu.css' %}" />
+</head>
+<body class="success-cases-page">
+  {% include 'components/menu/menu.html' %}
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="about-eyebrow"><span></span>Casos de Sucesso</div>
+        <h1>Como transformamos a restauração em Angola</h1>
+        <p>Conheça histórias reais de como as soluções da PIE Angola estão a ajudar empresas a crescer, a eficientar operações e a garantir conformidade fiscal.</p>
+      </div>
+    </section>
+
+    <section class="section cases-section">
+      <div class="container">
+        <div class="cases-grid">
+          <article class="case-card">
+            <img src="{% static 'images/news-1-2149ac.png' %}" alt="Fast Food Angola">
+            <div class="case-card__body">
+              <span class="case-card__tag">Fast Food</span>
+              <h3>As maiores marcas de fast food em Angola</h3>
+              <p>A PIE Angola implementou o WinRest NX Angola nas principais cadeias de fast food do país, garantindo faturação conforme com a legislação angolana, gestão em tempo real e suporte técnico local.</p>
+              <div class="case-card__stats">
+                <div><strong>+50</strong><span>unidades implementadas</span></div>
+                <div><strong>100%</strong><span>conformidade fiscal</span></div>
+              </div>
+              <a href="{% url 'contact' %}" class="btn btn-soft">Saber mais</a>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <img src="{% static 'images/news-2-8633ce.png' %}" alt="Gestão Centralizada">
+            <div class="case-card__body">
+              <span class="case-card__tag">Backoffice</span>
+              <h3>Gestão centralizada de cadeias em Angola</h3>
+              <p>Com o PingWin BO, uma das maiores cadeias de restauração em Angola passou a gerir todos os seus estabelecimentos a partir de um único backoffice local, melhorando o controlo de stocks e a eficiência operacional.</p>
+              <div class="case-card__stats">
+                <div><strong>Multi-loja</strong><span>gestão centralizada</span></div>
+                <div><strong>-30%</strong><span>desperdício em stocks</span></div>
+              </div>
+              <a href="{% url 'product_pingwin_bo' %}" class="btn btn-soft">Ver produto</a>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <img src="{% static 'images/news-2-8633ce.png' %}" alt="WinRest NX Angola">
+            <div class="case-card__body">
+              <span class="case-card__tag">Restauração</span>
+              <h3>Restauração organizada com WinRest NX Angola</h3>
+              <p>O WinRest NX Angola foi adotado por dezenas de restaurantes independentes em Luanda, permitindo a transição de processos manuais para uma gestão digital eficiente, com emissão de fatura eletrónica.</p>
+              <div class="case-card__stats">
+                <div><strong>Digital</strong><span>fatura eletrónica</span></div>
+                <div><strong>+2.000</strong><span>restaurantes ativos</span></div>
+              </div>
+              <a href="{% url 'product_winrest_nx' %}" class="btn btn-soft">Ver produto</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div class="overlay"></div>
+      <div class="container cta__inner">
+        <h2>O seu negócio pode ser o próximo caso de sucesso.</h2>
+        <a href="{% url 'contact' %}" class="btn btn-light">Fale connosco</a>
+      </div>
+    </section>
+  </main>
+
+  {% include 'components/footer/footer.html' %}
+
+  <script src="{% static 'js/components/menu.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

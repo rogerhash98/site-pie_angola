@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sobre nós | GrupoPIE</title>
+  <title>Sobre nós | PIE Angola</title>
+  <meta name="description" content="Conheça a PIE Angola — subsidiária da GrupoPIE Portugal com presença em Angola há mais de 4 anos, servindo cerca de 2.000 restaurantes e as maiores marcas de fast food.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -20,30 +21,31 @@
       <div class="container about-hero__inner">
         <div class="about-hero__content">
           <div class="about-eyebrow"><span></span>Sobre nós</div>
-          <h1>Há 33 anos a desenvolver soluções tecnológicas</h1>
-          <p>Acreditamos que todos devem poder participar e prosperar na economia.</p>
+          <h1>Há mais de 4 anos a transformar a restauração em Angola</h1>
+          <p>A PIE Angola é a subsidiária angolana da GrupoPIE Portugal, líder em software de gestão para restauração há mais de 33 anos.</p>
         </div>
       </div>
-      <img src="{% static 'images/components/about/about-hero-photo-15ed0a.png' %}" alt="Profissional usando solução tecnológica" class="about-hero__image" />
+      <img src="{% static 'images/components/about/about-hero-photo-15ed0a.png' %}" alt="Equipa PIE Angola" class="about-hero__image" />
     </section>
 
     <section class="about-history section">
       <div class="container about-history__grid">
         <div class="about-history__image-wrap">
-          <img src="{% static 'images/components/about/about-history-photo-38d9f1.png' %}" alt="Equipa GrupoPIE" class="about-history__image" />
+          <img src="{% static 'images/components/about/about-history-photo-38d9f1.png' %}" alt="Equipa PIE Angola" class="about-history__image" />
           <div class="about-history__lead">
-            <h3>Líder de mercado e líder tecnológico</h3>
-            <p>Estamos em constante busca pela inovação, visando proporcionar as ferramentas essenciais para a gestão abrangente do seu negócio.</p>
-            <a href="#contacto" class="btn btn-red">Entre em contacto</a>
+            <h3>Líder tecnológico em Angola</h3>
+            <p>Estamos em constante busca pela inovação, visando proporcionar as ferramentas essenciais para a gestão abrangente do seu negócio em Angola.</p>
+            <a href="{% url 'contact' %}" class="btn btn-red">Entre em contacto</a>
           </div>
         </div>
 
         <div class="about-history__content">
           <div class="about-eyebrow about-eyebrow--dark"><span></span>A nossa História</div>
-          <h2>Quem é o GrupoPIE</h2>
-          <p>Fundado em 1991, o GrupoPIE destaca-se como uma empresa especializada no desenvolvimento de software e soluções para diversos setores, incluindo restauração, retalho, mobilidade, hotelaria e eventos.</p>
-          <p>O percurso da empresa teve início com o desenvolvimento do software de faturação WinRest, pioneiro na Europa como um dos primeiros softwares para o ponto de venda na área da restauração, utilizando registo por ecrã tátil. Para além disso, foi criada a plataforma de desenvolvimento PRIMUM Based, dotada da capacidade de produzir software de gestão vertical adaptado a diferentes setores de atividade.</p>
-          <p>Atualmente, o GrupoPIE oferece um vasto portfólio de soluções de gestão, abrangendo empresas de diversas dimensões e setores. A equipa especializada está pronta para desenvolver novas aplicações e módulos complementares. A presença global estende-se por três continentes, com projetos em curso em Angola, Moçambique, Cabo Verde, Espanha e Brasil.</p>
+          <h2>Quem é a PIE Angola</h2>
+          <p>A PIE Angola é a subsidiária angolana da <strong>GrupoPIE Portugal</strong>, empresa fundada em 1991 e especializada no desenvolvimento de software e soluções para restauração, retalho, mobilidade, hotelaria e eventos.</p>
+          <p>A presença em Angola iniciou-se com o objetivo de apoiar o crescimento da restauração organizada no país, trazendo tecnologia de ponta adaptada ao contexto local. Hoje, a PIE Angola é o parceiro tecnológico das maiores marcas de fast food presentes em Angola, com cerca de <strong>2.000 restaurantes</strong> a operar com as nossas soluções.</p>
+          <p>O nosso escritório está localizado no <strong>Bairro Militar, Município de Belas, Luanda</strong>, junto ao Centro Logístico de Talatona, e a nossa equipa está sempre disponível para apoiar os nossos clientes com formação, suporte técnico e implementação.</p>
+          <p>Como parte do GrupoPIE, beneficiamos de uma rede global presente em <strong>mais de 50 países</strong>, com soluções certificadas e conformes com a legislação fiscal angolana.</p>
         </div>
       </div>
     </section>
@@ -52,27 +54,56 @@
       <div class="container">
         <div class="about-trust__title">
           <div class="about-eyebrow about-eyebrow--dark"><span></span>Experiência</div>
-          <h2>Soluções de confiança</h2>
+          <h2>Soluções de confiança para Angola</h2>
         </div>
         <div class="about-trust__cards">
           <article class="about-trust-card">
-            <img src="{% static 'images/components/about/about-trust-icon-1.svg' %}" alt="Unidades instaladas" class="about-trust-card__icon" />
-            <h3>Unidades instaladas</h3>
-            <p>Mais de 31.000 unidades ativas e 60 mil instalações escolheram as soluções da Linha WinRest e PRIMUM para o seu negócio.</p>
-            <a href="#">Clientes referência</a>
+            <img src="{% static 'images/components/about/about-trust-icon-1.svg' %}" alt="Restaurantes em Angola" class="about-trust-card__icon" />
+            <h3>~2.000 restaurantes</h3>
+            <p>Cerca de 2.000 restaurantes em Angola confiam nas nossas soluções para faturação e gestão diária dos seus negócios.</p>
+            <a href="{% url 'clients' %}">Clientes referência</a>
           </article>
           <article class="about-trust-card">
-            <img src="{% static 'images/components/about/about-trust-icon-2.svg' %}" alt="Soluções verticais" class="about-trust-card__icon" />
-            <h3>Soluções verticais</h3>
-            <p>Desenvolvemos soluções de gestão vertical por setor de atividade, adaptadas às necessidades dos nossos clientes.</p>
-            <a href="{% url 'home' %}#solucoes">Soluções PIE</a>
+            <img src="{% static 'images/components/about/about-trust-icon-2.svg' %}" alt="Soluções angolanas" class="about-trust-card__icon" />
+            <h3>Soluções para Angola</h3>
+            <p>Soluções desenvolvidas e adaptadas ao mercado angolano, com conformidade fiscal local e suporte técnico em Luanda.</p>
+            <a href="{% url 'solutions' %}">Soluções PIE Angola</a>
           </article>
           <article class="about-trust-card">
-            <img src="{% static 'images/components/about/about-trust-icon-3.svg' %}" alt="Experiência e know-how" class="about-trust-card__icon" />
-            <h3>Experiência e know-how</h3>
-            <p>Investimos no desenvolvimento de tecnologia ímpar e inovadora, produzindo soluções tecnológicas únicas.</p>
-            <a href="{% url 'home' %}#produtos">Produtos PIE</a>
+            <img src="{% static 'images/components/about/about-trust-icon-3.svg' %}" alt="33 anos de experiência" class="about-trust-card__icon" />
+            <h3>33 anos de experiência</h3>
+            <p>A GrupoPIE Portugal foi fundada em 1991. Mais de 3 décadas de inovação tecnológica ao serviço da restauração mundial.</p>
+            <a href="{% url 'solutions' %}">Produtos PIE Angola</a>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-address section">
+      <div class="container about-address__inner">
+        <div class="about-eyebrow about-eyebrow--dark"><span></span>Localização</div>
+        <h2>Encontre-nos em Luanda</h2>
+        <div class="about-address__grid">
+          <div class="about-address__info">
+            <div class="about-address__item">
+              <strong>Morada</strong>
+              <p>Rua A nº 8 / Rua B nº 18<br>Junto ao Centro Logístico de Talatona<br>Bairro Militar, Município de Belas<br>Luanda — Angola</p>
+            </div>
+            <div class="about-address__item">
+              <strong>Contactos</strong>
+              <p>
+                <a href="tel:+244926000000">(+244) 926 000 000</a><br>
+                <a href="mailto:info@pieangola.com">info@pieangola.com</a>
+              </p>
+            </div>
+            <a href="{% url 'contact' %}" class="btn btn-red">Enviar mensagem</a>
+          </div>
+          <div class="about-address__map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.0!2d13.28!3d-8.94!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBairro+Militar%2C+Belas%2C+Luanda!5e0!3m2!1spt!2sao!4v1!5m2!1spt!2sao"
+              width="100%" height="320" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" title="Localização PIE Angola"></iframe>
+          </div>
         </div>
       </div>
     </section>
@@ -81,47 +112,14 @@
       <img src="{% static 'images/components/about/about-contact-bg-428c4f.png' %}" alt="" class="about-contact__bg" />
       <div class="about-contact__overlay"></div>
       <div class="container about-contact__content">
-        <h2>Contacte-nos!</h2>
-        <p>Se deseja saber mais sobre como o GrupoPIE pode apoiar o seu negócio, contacte-nos.</p>
-        <a href="#" class="btn btn-light">Entre em contacto</a>
+        <h2>Fale com a equipa PIE Angola</h2>
+        <p>Se deseja saber mais sobre como a PIE Angola pode apoiar o seu negócio, entre em contacto connosco.</p>
+        <a href="{% url 'contact' %}" class="btn btn-light">Entre em contacto</a>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-        <img src="{% static 'images/logo-footer.svg' %}" alt="GrupoPIE" class="footer-logo">
-        <div class="footer-contact">
-          <div><img src="{% static 'images/icon-phone.svg' %}" alt="Telefone"><span>(+351) 252 290 600</span></div>
-          <div><img src="{% static 'images/icon-mail.svg' %}" alt="Email"><span>grupopie@grupopie.com</span></div>
-        </div>
-      </div>
-
-      <div class="footer-menus">
-        <div><h4>GrupoPIE</h4><a href="{% url 'about' %}">Sobre nós</a><a href="#">Clientes</a><a href="#">Parceiros</a><a href="#">Recrutamento</a><a href="#">Contactos</a></div>
-        <div><h4>Soluções</h4><a href="{% url 'home' %}#solucoes">Restauração</a><a href="{% url 'home' %}#solucoes">Retalho</a><a href="{% url 'home' %}#solucoes">Eventos</a><a href="{% url 'home' %}#solucoes">Hotelaria</a><a href="{% url 'home' %}#solucoes">Gestão Comercial</a><a href="{% url 'home' %}#solucoes">Fidelização</a></div>
-        <div><h4>Produtos</h4><a href="{% url 'home' %}#produtos">WinRest 360</a><a href="{% url 'home' %}#produtos">Booking All</a><a href="{% url 'home' %}#produtos">PingWin FO</a><a href="{% url 'home' %}#produtos">360City FUN</a><a href="{% url 'home' %}#produtos">360City Hotel</a></div>
-        <div class="footer-cta">
-          <a href="#contacto" class="btn btn-red">Pedido de Contacto</a>
-          <p>Siga-nos</p>
-          <div class="social">
-            <img src="{% static 'images/icon-facebook.svg' %}" alt="Facebook">
-            <img src="{% static 'images/icon-instagram.svg' %}" alt="Instagram">
-            <img src="{% static 'images/icon-youtube.svg' %}" alt="YouTube">
-            <img src="{% static 'images/icon-linkedin.svg' %}" alt="LinkedIn">
-          </div>
-        </div>
-      </div>
-
-      <div class="copy">© Copyright 2024 GrupoPIE Portugal SA. Todos os direitos reservados. Política de Privacidade . Termos e Condições</div>
-    </div>
-  </footer>
-
-  <button class="chat-float" type="button">
-    <img src="{% static 'images/icon-chat.svg' %}" alt="Chat">
-    <span>Precisa de Ajuda?</span>
-  </button>
+  {% include 'components/footer/footer.html' %}
 
   <script src="{% static 'js/components/menu.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
