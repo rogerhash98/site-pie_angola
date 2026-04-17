@@ -4,207 +4,239 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PIE Angola — Software líder em restauração e gestão</title>
-  <meta name="description" content="PIE Angola — subsidiária da GrupoPIE Portugal. Software de faturação e gestão para restaurantes, fast food e comércio em Angola. WinRest NX Angola, PingWin BO, WinRest 360.">
+  <title>GrupoPIE — Software líder em restauração e gestão</title>
+  <meta name="description" content="GrupoPIE — Software de faturação e gestão para restaurantes, fast food e comércio. WinRest, PingWin, Booking All e muito mais.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Cabin:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/home.css' %}" />
   <link rel="stylesheet" href="{% static 'css/components/menu.css' %}" />
 </head>
 <body>
   {% include 'components/menu/menu.html' %}
 
-  <section class="hero">
-    <div class="container hero__content">
-      <div class="hero__text">
-        <span class="hero__eyebrow">Software líder em Angola</span>
-        <h1>O software escolhido pelas maiores marcas de fast food em Angola</h1>
-        <p>A PIE Angola é o parceiro tecnológico de referência para a restauração em Angola, com soluções de faturação e gestão para restaurantes, fast food, bares e franchising.</p>
-        <div class="hero__actions">
-          <a href="{% url 'contact' %}" class="btn btn-red">Pedir Demonstração</a>
-          <a href="{% url 'solutions' %}" class="btn btn-soft">Conhecer Soluções</a>
+  <!-- 1. HERO -->
+  <section class="pie-hero">
+    <div class="pie-hero__overlay"></div>
+    <div class="pie-hero__content container">
+      <p class="pie-hero__sub">+31.000 restaurantes escolhem WinRest</p>
+      <h1 class="pie-hero__title">O software escolhido pelas marcas líderes da restauração</h1>
+      <p class="pie-hero__subtitle">Faturação, pedidos, pagamentos e controlo operacional num único sistema.</p>
+      <a href="#" class="pie-hero__btn">Explorar soluções WinRest</a>
+    </div>
+  </section>
+
+  <!-- 2. SOLUÇÕES -->
+  <section class="pie-sol">
+    <div class="container">
+      <h2 class="pie-sec-title">As soluções certas para cada tipo de negócio</h2>
+      <div class="pie-sol__grid">
+        <div class="pie-sol__card">
+          <img src="{% static 'images/sol-restauracao.svg' %}" alt="" class="pie-sol__icon" />
+          <h3 class="pie-sol__name">Restauração &amp; Similares</h3>
+          <p class="pie-sol__desc">Solução completa para gestão e faturação</p>
+        </div>
+        <div class="pie-sol__card">
+          <img src="{% static 'images/sol-comercio.svg' %}" alt="" class="pie-sol__icon" />
+          <h3 class="pie-sol__name">Comércio &amp; Serviços</h3>
+          <p class="pie-sol__desc">Software adaptado ao retalho e serviços</p>
+        </div>
+        <div class="pie-sol__card">
+          <img src="{% static 'images/sol-gestao.svg' %}" alt="" class="pie-sol__icon" />
+          <h3 class="pie-sol__name">Gestão Comercial</h3>
+          <p class="pie-sol__desc">Controlo do negócio<br>em tempo real</p>
+        </div>
+        <div class="pie-sol__card">
+          <img src="{% static 'images/sol-agregador.svg' %}" alt="" class="pie-sol__icon" />
+          <h3 class="pie-sol__name">Agregador de Entregas</h3>
+          <p class="pie-sol__desc">Pedidos online centralizados num só lugar</p>
+        </div>
+        <div class="pie-sol__card">
+          <img src="{% static 'images/sol-fidelizacao.svg' %}" alt="" class="pie-sol__icon" />
+          <h3 class="pie-sol__name">Fidelização de Clientes</h3>
+          <p class="pie-sol__desc">Programas que aumentam retenção e vendas</p>
+        </div>
+        <div class="pie-sol__card">
+          <img src="{% static 'images/sol-faturacao.svg' %}" alt="" class="pie-sol__icon" />
+          <h3 class="pie-sol__name">Faturação em Mobilidade</h3>
+          <p class="pie-sol__desc">Faturação rápida e ágil<br>no PDA</p>
+        </div>
+        <div class="pie-sol__card">
+          <img src="{% static 'images/sol-digitalizacao.svg' %}" alt="" class="pie-sol__icon" />
+          <h3 class="pie-sol__name">Digitalização no Atendimento</h3>
+          <p class="pie-sol__desc">Pedidos e pagamentos feitos pelo cliente</p>
+        </div>
+        <div class="pie-sol__card">
+          <img src="{% static 'images/sol-cashless.svg' %}" alt="" class="pie-sol__icon" />
+          <h3 class="pie-sol__name">Sistema Cashless para Eventos</h3>
+          <p class="pie-sol__desc">Pagamentos e consumos totalmente digitais</p>
         </div>
       </div>
     </div>
-    <img src="{% static 'images/hero-dots.svg' %}" alt="" aria-hidden="true" class="dots" />
   </section>
 
-  <main>
-    <section id="solucoes" class="section section--cards">
-      <div class="container">
-        <h2>Soluções completas para o seu negócio em Angola</h2>
-        <div class="grid-cards">
-          <article class="card card--restauracao">
-            <img src="{% static 'images/components/home/card-restauracao.svg' %}" alt="Restauração" class="card__icon">
-            <h3>Restauração<br>e similares</h3>
-            <p>Solução completa para restaurantes, bares, fast food e franchising em Angola</p>
-          </article>
-          <article class="card">
-            <h3>Comércio e Serviços</h3>
-            <p>Solução personalizada para o seu negócio a retalho em Angola</p>
-          </article>
-          <article class="card">
-            <h3>Gestão Comercial</h3>
-            <p>Controle o seu negócio em tempo real, em qualquer lugar</p>
-          </article>
-          <article class="card">
-            <h3>Agregador de entregas</h3>
-            <p>Simplifique a gestão dos seus pedidos online e deliveries</p>
-          </article>
-          <article class="card">
-            <h3>Fidelização de Clientes</h3>
-            <p>Fortaleça a relação com os seus clientes com programas de fidelidade</p>
-          </article>
-          <article class="card">
-            <h3>Digitalização no atendimento</h3>
-            <p>Dê autonomia total ao seu cliente nos pedidos e pagamentos</p>
-          </article>
-          <article class="card">
-            <h3>Faturação em mobilidade</h3>
-            <p>Torne o seu negócio mais ágil com pagamento em mobilidade</p>
-          </article>
-          <article class="card">
-            <h3>Gestão de stocks e compras</h3>
-            <p>Centralize stocks, compras e preços em todas as suas lojas</p>
-          </article>
-          <article class="card">
-            <h3>Backoffice multi-loja</h3>
-            <p>Gira múltiplos estabelecimentos a partir de um único backoffice</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section logos">
-      <div class="container logos__inner">
-        <h2>+2.000 restaurantes em Angola confiam nas nossas soluções</h2>
-        <div class="logo-track logo-track--ltr">
-          <span class="logo-item">KFC Angola</span>
-          <span class="logo-item">McDonald's</span>
-          <span class="logo-item">Pizza Hut</span>
-          <span class="logo-item">Burger King</span>
-          <span class="logo-item">Subway</span>
-          <span class="logo-item">Chicken Inn</span>
-          <span class="logo-item">KFC Angola</span>
-          <span class="logo-item">McDonald's</span>
-          <span class="logo-item">Pizza Hut</span>
-          <span class="logo-item">Burger King</span>
-        </div>
-        <div class="logo-track logo-track--rtl">
-          <span class="logo-item">Telepizza</span>
-          <span class="logo-item">Nando's</span>
-          <span class="logo-item">Freshness Burger</span>
-          <span class="logo-item">Galito's</span>
-          <span class="logo-item">Steers</span>
-          <span class="logo-item">Caffè Nero</span>
-          <span class="logo-item">Telepizza</span>
-          <span class="logo-item">Nando's</span>
-          <span class="logo-item">Freshness Burger</span>
-          <span class="logo-item">Galito's</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="produtos" class="section products" aria-label="Produtos">
-      <div class="container">
-        <h2>Soluções que fazem crescer o seu negócio em Angola</h2>
-        <div class="products-carousel" aria-label="Carrossel de produtos">
-          <button class="carousel-arrow prev" id="products-prev" aria-label="Anterior">‹</button>
-          <div class="products-track" id="products-track">
-            <article class="product-slide">
-              <img src="{% static 'images/product-winrest.png' %}" alt="WinRest NX Angola">
-              <h3>WinRest NX Angola</h3>
-              <p>Software de gestão para restaurantes, bares e franchising. Multiplataforma, multilíngue, com 2 versões: FO PRO e NX Angola.</p>
-              <a href="{% url 'product_winrest_nx' %}">Saber mais</a>
-            </article>
-            <article class="product-slide">
-              <img src="{% static 'images/product-pingwinfo-home21-4ca840.png' %}" alt="PingWin BO">
-              <h3>PingWin BO</h3>
-              <p>Backoffice multiempresa e multiloja. Gestão centralizada de stocks, compras e preços com operação totalmente local.</p>
-              <a href="{% url 'product_pingwin_bo' %}">Saber mais</a>
-            </article>
-            <article class="product-slide">
-              <img src="{% static 'images/product-360city-home21-56586a.png' %}" alt="WinRest 360">
-              <h3>WinRest 360</h3>
-              <p>Solução completa que liga toda a cadeia de valor da restauração. Modelo a custo zero via WinOrder.</p>
-              <a href="{% url 'solutions' %}">Saber mais</a>
-            </article>
-            <article class="product-slide">
-              <img src="{% static 'images/product-bookingall.png' %}" alt="WinRest FO PRO">
-              <h3>WinRest FO PRO</h3>
-              <p>Versão simplificada e acessível do WinRest NX, ideal para pequenos negócios em Angola.</p>
-              <a href="{% url 'solutions' %}">Saber mais</a>
-            </article>
-            <article class="product-slide">
-              <img src="{% static 'images/product-fun.png' %}" alt="Faturação em mobilidade">
-              <h3>Faturação Móvel</h3>
-              <p>Fature e gira pedidos em mobilidade. Agilize o atendimento e aumente a satisfação dos clientes.</p>
-              <a href="{% url 'solutions' %}">Saber mais</a>
-            </article>
+  <!-- 3. PRODUTOS -->
+  <section class="pie-prod">
+    <div class="container">
+      <h2 class="pie-sec-title">Produtos especializados para cada tipo de operação</h2>
+    </div>
+    <div class="pie-prod__scroll-outer">
+      <div class="pie-prod__track">
+        <div class="pie-prod__card">
+          <div class="pie-prod__img-wrap">
+            <img src="{% static 'images/prod-winrest.png' %}" alt="WinRest" class="pie-prod__img" />
           </div>
-          <button class="carousel-arrow next" id="products-next" aria-label="Seguinte">›</button>
+          <div class="pie-prod__body">
+            <h3 class="pie-prod__name">WinRest</h3>
+            <p class="pie-prod__sub">O POS mais completo para restauração</p>
+            <p class="pie-prod__desc">Faturação, gestão, pedidos, pagamentos e relatórios - totalmente integrado</p>
+            <a href="{% url 'product_winrest_nx' %}" class="pie-prod__link">Saber mais</a>
+          </div>
         </div>
-        <div class="carousel-dots" id="products-dots">
-          <button class="dot is-active" data-index="0" aria-label="Página 1"></button>
-          <button class="dot" data-index="1" aria-label="Página 2"></button>
-          <button class="dot" data-index="2" aria-label="Página 3"></button>
+        <div class="pie-prod__card">
+          <div class="pie-prod__img-wrap">
+            <img src="{% static 'images/prod-bookingall.png' %}" alt="Booking All" class="pie-prod__img" />
+          </div>
+          <div class="pie-prod__body">
+            <h3 class="pie-prod__name">Booking All</h3>
+            <p class="pie-prod__sub">Pedidos take-away e delivery no POS</p>
+            <p class="pie-prod__desc">Receba, organize e centralize pedidos de todas as plataformas</p>
+            <a href="{% url 'solutions' %}" class="pie-prod__link">Saber mais</a>
+          </div>
+        </div>
+        <div class="pie-prod__card">
+          <div class="pie-prod__img-wrap">
+            <img src="{% static 'images/prod-360fun.png' %}" alt="360City FUN" class="pie-prod__img" />
+          </div>
+          <div class="pie-prod__body">
+            <h3 class="pie-prod__name">360City FUN</h3>
+            <p class="pie-prod__sub">Pagamentos cashless para eventos</p>
+            <p class="pie-prod__desc">Pagamentos, acessos e consumos - tudo digital e simplificado.</p>
+            <a href="{% url 'solutions' %}" class="pie-prod__link">Saber mais</a>
+          </div>
+        </div>
+        <div class="pie-prod__card">
+          <div class="pie-prod__img-wrap">
+            <img src="{% static 'images/prod-pingwinmba.png' %}" alt="PingWin MBA" class="pie-prod__img" />
+          </div>
+          <div class="pie-prod__body">
+            <h3 class="pie-prod__name">PingWin MBA</h3>
+            <p class="pie-prod__sub">Faturação e gestão simples e completa</p>
+            <p class="pie-prod__desc">Dashboard, documentos e controlo administrativo num só sistema</p>
+            <a href="{% url 'solutions' %}" class="pie-prod__link">Saber mais</a>
+          </div>
+        </div>
+        <div class="pie-prod__card">
+          <div class="pie-prod__img-wrap">
+            <img src="{% static 'images/prod-pingwin.png' %}" alt="PingWin" class="pie-prod__img" />
+          </div>
+          <div class="pie-prod__body">
+            <h3 class="pie-prod__name">PingWin</h3>
+            <p class="pie-prod__sub">Gestão para comércio e retalho</p>
+            <p class="pie-prod__desc">Ideal para lojas, pastelarias, papelarias e outros negócios especializados.</p>
+            <a href="{% url 'product_pingwin_bo' %}" class="pie-prod__link">Saber mais</a>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section stats">
-      <div class="overlay"></div>
-      <div class="container">
-        <h2>Números que refletem a nossa presença</h2>
-        <div class="stats-grid">
-          <div><strong>+ 10.000.000</strong><span>tickets por dia</span></div>
-          <div><strong>~2.000</strong><span>restaurantes em Angola</span></div>
-          <div><strong>+ 60.000</strong><span>instalações software POS</span></div>
-          <div><strong>+ 31.000</strong><span>unidades ativas</span></div>
-          <div><strong>+ 50</strong><span>países com conformidade fiscal</span></div>
+  <!-- 4. CLIENTES -->
+  <section class="pie-clients">
+    <div class="container">
+      <h2 class="pie-sec-title">+31.000 empresas confiam nas nossas soluções</h2>
+      <div class="pie-clients__logos">
+        <img src="{% static 'images/client-logo-1.png' %}" alt="Cliente 1" />
+        <img src="{% static 'images/client-logo-2.png' %}" alt="Cliente 2" />
+        <img src="{% static 'images/client-logo-3.png' %}" alt="Cliente 3" />
+        <img src="{% static 'images/client-logo-4.png' %}" alt="Cliente 4" />
+        <img src="{% static 'images/client-logo-5.png' %}" alt="Cliente 5" />
+        <img src="{% static 'images/client-logo-6.png' %}" alt="Cliente 6" />
+        <img src="{% static 'images/client-logo-7.png' %}" alt="Cliente 7" />
+        <img src="{% static 'images/client-logo-8.png' %}" alt="Cliente 8" />
+        <img src="{% static 'images/client-logo-9.png' %}" alt="Cliente 9" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. CTA -->
+  <section class="pie-cta">
+    <div class="pie-cta__overlay"></div>
+    <div class="pie-cta__content container">
+      <h2 class="pie-cta__title">A tecnologia certa para o seu negócio<br>completa, simples e integrada.</h2>
+      <a href="{% url 'contact' %}" class="pie-cta__btn">Quero saber mais</a>
+    </div>
+  </section>
+
+  <!-- 6. ESTATÍSTICAS -->
+  <section class="pie-stats">
+    <div class="container">
+      <h2 class="pie-sec-title">Números que traduzem o nosso sucesso</h2>
+      <div class="pie-stats__grid">
+        <div class="pie-stats__item">
+          <img src="{% static 'images/stats-icon-globe.svg' %}" alt="" class="pie-stats__icon" />
+          <span class="pie-stats__num">+15</span>
+          <span class="pie-stats__label">Países</span>
+        </div>
+        <div class="pie-stats__item">
+          <img src="{% static 'images/stats-icon-units.svg' %}" alt="" class="pie-stats__icon" />
+          <span class="pie-stats__num">+31.000</span>
+          <span class="pie-stats__label">unidades ativas</span>
+        </div>
+        <div class="pie-stats__item">
+          <img src="{% static 'images/stats-icon-pos.svg' %}" alt="" class="pie-stats__icon" />
+          <span class="pie-stats__num">+60.000</span>
+          <span class="pie-stats__label">instalações POS</span>
+        </div>
+        <div class="pie-stats__item">
+          <img src="{% static 'images/stats-icon-tickets.svg' %}" alt="" class="pie-stats__icon" />
+          <span class="pie-stats__num">+10 Milhões</span>
+          <span class="pie-stats__label">de tickets/dia</span>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="casos" class="section cta">
-      <div class="overlay"></div>
-      <div class="container cta__inner">
-        <h2>Há mais de 4 anos a liderar a transformação digital da restauração angolana.</h2>
-        <a href="{% url 'contact' %}" class="btn btn-light">Fale com a nossa equipa</a>
+  <!-- 7. NOVIDADES -->
+  <section class="pie-news">
+    <div class="container">
+      <h2 class="pie-sec-title">Mantenha-se atualizado</h2>
+      <div class="pie-news__grid">
+        <article class="pie-news__card">
+          <div class="pie-news__img-wrap">
+            <img src="{% static 'images/news-1.png' %}" alt="Booking All" class="pie-news__img" />
+          </div>
+          <div class="pie-news__body">
+            <h3 class="pie-news__title">Booking All - Pedidos integrados</h3>
+            <p class="pie-news__desc">Solução completa e única para a integração de plataformas de delivery e gestão de entregas.</p>
+            <a href="#" class="pie-news__link">Ler mais</a>
+          </div>
+        </article>
+        <article class="pie-news__card">
+          <div class="pie-news__img-wrap">
+            <img src="{% static 'images/news-2.png' %}" alt="Backoffice" class="pie-news__img" />
+          </div>
+          <div class="pie-news__body">
+            <h3 class="pie-news__title">Backoffice de Gestão</h3>
+            <p class="pie-news__desc">Gestão do negócio de forma segura e com ferramentas para tomar as decisões.</p>
+            <a href="#" class="pie-news__link">Ler mais</a>
+          </div>
+        </article>
+        <article class="pie-news__card">
+          <div class="pie-news__img-wrap">
+            <img src="{% static 'images/news-2.png' %}" alt="Backoffice" class="pie-news__img" />
+          </div>
+          <div class="pie-news__body">
+            <h3 class="pie-news__title">Backoffice de Gestão</h3>
+            <p class="pie-news__desc">Gestão do negócio de forma segura e com ferramentas para tomar as decisões.</p>
+            <a href="#" class="pie-news__link">Ler mais</a>
+          </div>
+        </article>
       </div>
-    </section>
-
-    <section class="section news">
-      <div class="container">
-        <h2>Casos de sucesso em Angola</h2>
-        <div class="news-grid">
-          <article>
-            <img src="{% static 'images/news-1-2149ac.png' %}" alt="Fast Food Angola">
-            <h3>Fast Food em Angola</h3>
-            <p>A PIE Angola é responsável pelas soluções de faturação das maiores marcas de fast food do país, garantindo fiabilidade e conformidade fiscal.</p>
-            <a href="{% url 'success_cases' %}">Ler mais</a>
-          </article>
-          <article>
-            <img src="{% static 'images/news-2-8633ce.png' %}" alt="Gestão centralizada">
-            <h3>Gestão Centralizada</h3>
-            <p>Com o PingWin BO, as maiores cadeias de restauração em Angola gerem todos os seus estabelecimentos a partir de um único backoffice local.</p>
-            <a href="{% url 'product_pingwin_bo' %}">Ler mais</a>
-          </article>
-          <article>
-            <img src="{% static 'images/news-2-8633ce.png' %}" alt="WinRest NX Angola">
-            <h3>WinRest NX Angola</h3>
-            <p>O WinRest NX Angola foi desenvolvido especificamente para o mercado angolano, com suporte multi-fiscal e integração com equipamentos locais.</p>
-            <a href="{% url 'product_winrest_nx' %}">Ler mais</a>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   {% include 'components/footer/footer.html' %}
-
-  <script src="{% static 'js/components/menu.js' %}"></script>
-  <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
