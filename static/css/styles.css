@@ -1640,7 +1640,7 @@ h3,
   position: absolute;
   inset: 0;
   background: #F8F4F4;
-  z-index: 1;
+  z-index: 0;
 }
 
 .contact-hero__image-wrap {
@@ -1649,7 +1649,9 @@ h3,
   right: 0;
   width: 58%;
   height: 100%;
-  z-index: 0;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 .contact-hero__image {
@@ -2159,18 +2161,19 @@ h3,
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
+  width: 48px;
+  height: 48px;
+  border-radius: 0;
+  background: transparent;
   text-decoration: none;
   transition: opacity 0.2s, transform 0.2s;
 }
-.pie-footer__social-icon:hover { opacity: 0.85; transform: translateY(-2px); }
+.pie-footer__social-icon:hover { opacity: 0.7; transform: translateY(-2px); }
 
-.pie-footer__social-icon--fb { background: #1877F2; }
-.pie-footer__social-icon--ig { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
-.pie-footer__social-icon--yt { background: #FF0000; }
-.pie-footer__social-icon--li { background: #0A66C2; }
+.pie-footer__social-icon--fb { background: transparent; }
+.pie-footer__social-icon--ig { background: transparent; }
+.pie-footer__social-icon--yt { background: transparent; }
+.pie-footer__social-icon--li { background: transparent; }
 
 /* ---- copyright ---- */
 .pie-footer__bottom {

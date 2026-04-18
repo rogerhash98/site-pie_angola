@@ -3,34 +3,193 @@
   <div class="pie-menu__bar">
     <div class="pie-menu__container">
       <a href="{% url 'home' %}" class="pie-menu__logo-link" aria-label="GrupoPIE">
-        <img src="{% static 'images/menu-logo-diamond.png' %}" alt="" class="pie-menu__logo-diamond" />
-        <img src="{% static 'images/menu-logo-text.png' %}" alt="GrupoPIE" class="pie-menu__logo-text" />
+        <img src="{% static 'images/menu-logo.svg' %}" alt="GrupoPIE" class="pie-menu__logo" />
       </a>
 
       <button id="pie-menu-toggle" class="pie-menu__toggle" aria-label="Abrir menu">☰</button>
 
       <nav id="pie-menu-nav" class="pie-menu__nav" aria-label="Navegação principal">
-        <a href="{% url 'solutions' %}" class="pie-menu__item{% if active_menu == 'solutions' %} pie-menu__item--active{% endif %}">
-          <span class="pie-menu__title">Conheça</span>
-          <span class="pie-menu__subtitle">as nossas soluções</span>
-        </a>
-        <a href="{% url 'solutions' %}" class="pie-menu__item{% if active_menu == 'products' %} pie-menu__item--active{% endif %}">
-          <span class="pie-menu__title">Escolha</span>
-          <span class="pie-menu__subtitle">os nossos produtos</span>
-        </a>
-        <a href="{% url 'about' %}" class="pie-menu__item{% if active_menu == 'about' %} pie-menu__item--active{% endif %}">
-          <span class="pie-menu__title">Sobre</span>
-          <span class="pie-menu__subtitle">o GrupoPIE</span>
-        </a>
+        <!-- Conheça — Soluções dropdown -->
+        <div class="pie-menu__dropdown" data-dropdown="solucoes">
+          <button class="pie-menu__item{% if active_menu == 'solutions' %} pie-menu__item--active{% endif %}" type="button" aria-expanded="false">
+            <span class="pie-menu__title">Conheça</span>
+            <span class="pie-menu__subtitle">as nossas soluções <img src="{% static 'images/menu-arrow-down.svg' %}" alt="" class="pie-menu__arrow" /></span>
+          </button>
+        </div>
+
+        <!-- Escolha — Produtos dropdown -->
+        <div class="pie-menu__dropdown" data-dropdown="produtos">
+          <button class="pie-menu__item{% if active_menu == 'products' %} pie-menu__item--active{% endif %}" type="button" aria-expanded="false">
+            <span class="pie-menu__title">Escolha</span>
+            <span class="pie-menu__subtitle">os nossos produtos <img src="{% static 'images/menu-arrow-down.svg' %}" alt="" class="pie-menu__arrow" /></span>
+          </button>
+        </div>
+
+        <!-- Sobre — GrupoPIE dropdown -->
+        <div class="pie-menu__dropdown" data-dropdown="sobre">
+          <button class="pie-menu__item{% if active_menu == 'about' %} pie-menu__item--active{% endif %}" type="button" aria-expanded="false">
+            <span class="pie-menu__title">Sobre</span>
+            <span class="pie-menu__subtitle">o GrupoPIE <img src="{% static 'images/menu-arrow-down.svg' %}" alt="" class="pie-menu__arrow" /></span>
+          </button>
+        </div>
       </nav>
 
       <a href="https://www.mycloudpie.com/" class="pie-menu__cloud-btn" target="_blank" rel="noopener">myCloud PIE</a>
     </div>
   </div>
+
+  <!-- Red accent bar (shows under active dropdown) -->
+  <div class="pie-menu__accent-bar" id="pie-menu-accent"></div>
+
+  <!-- ═══ Mega-menu: Soluções ═══ -->
+  <div class="pie-mega" id="mega-solucoes" hidden>
+    <div class="pie-mega__panel">
+      <div class="pie-mega__columns">
+        <div class="pie-mega__col">
+          <h4 class="pie-mega__heading">Soluções Setoriais</h4>
+          <a href="{% url 'solutions' %}" class="pie-mega__link">Restauração &amp; Similares</a>
+          <a href="{% url 'solutions' %}" class="pie-mega__link">Comércio &amp; Serviços</a>
+          <a href="{% url 'solutions' %}" class="pie-mega__link">Festivais &amp; Eventos</a>
+          <a href="{% url 'solutions' %}" class="pie-mega__link">Hotelaria</a>
+          <a href="{% url 'solutions' %}" class="pie-mega__link">Cidades Digitais</a>
+        </div>
+        <div class="pie-mega__col">
+          <h4 class="pie-mega__heading">Soluções Complementares</h4>
+          <a href="{% url 'solutions' %}" class="pie-mega__link">Gestão Comercial</a>
+          <a href="{% url 'solutions' %}" class="pie-mega__link">Agregador de Pedidos e Entregas</a>
+          <a href="{% url 'solutions' %}" class="pie-mega__link">Fidelização de Clientes</a>
+        </div>
+        <div class="pie-mega__col">
+          <h4 class="pie-mega__heading">Soluções de Mobilidade</h4>
+          <a href="{% url 'solutions' %}" class="pie-mega__link">Faturação em mobilidade</a>
+          <a href="{% url 'solutions' %}" class="pie-mega__link">Pedidos e pagamentos à mesa</a>
+        </div>
+      </div>
+      <div class="pie-mega__card">
+        <img src="{% static 'images/menu-winrest-thumb-16665b.png' %}" alt="WinRest 360" class="pie-mega__card-img" />
+        <p class="pie-mega__card-title">WinRest 360</p>
+        <p class="pie-mega__card-desc">A Solução Global para a Restauração</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Mega-menu: Produtos (same layout, product links) ═══ -->
+  <div class="pie-mega" id="mega-produtos" hidden>
+    <div class="pie-mega__panel">
+      <div class="pie-mega__columns">
+        <div class="pie-mega__col">
+          <h4 class="pie-mega__heading">Soluções Setoriais</h4>
+          <a href="{% url 'product_winrest_nx' %}" class="pie-mega__link">Restauração &amp; Similares</a>
+          <a href="{% url 'product_winrest_nx' %}" class="pie-mega__link">Comércio &amp; Serviços</a>
+          <a href="{% url 'product_winrest_nx' %}" class="pie-mega__link">Festivais &amp; Eventos</a>
+          <a href="{% url 'product_winrest_nx' %}" class="pie-mega__link">Hotelaria</a>
+          <a href="{% url 'product_pingwin_bo' %}" class="pie-mega__link">Cidades Digitais</a>
+        </div>
+        <div class="pie-mega__col">
+          <h4 class="pie-mega__heading">Soluções Complementares</h4>
+          <a href="{% url 'product_winrest_nx' %}" class="pie-mega__link">Gestão Comercial</a>
+          <a href="{% url 'product_winrest_nx' %}" class="pie-mega__link">Agregador de Pedidos e Entregas</a>
+          <a href="{% url 'product_pingwin_bo' %}" class="pie-mega__link">Fidelização de Clientes</a>
+        </div>
+        <div class="pie-mega__col">
+          <h4 class="pie-mega__heading">Soluções de Mobilidade</h4>
+          <a href="{% url 'product_winrest_nx' %}" class="pie-mega__link">Faturação em mobilidade</a>
+          <a href="{% url 'product_winrest_nx' %}" class="pie-mega__link">Pedidos e pagamentos à mesa</a>
+        </div>
+      </div>
+      <div class="pie-mega__card">
+        <img src="{% static 'images/menu-winrest-thumb-16665b.png' %}" alt="WinRest 360" class="pie-mega__card-img" />
+        <p class="pie-mega__card-title">WinRest 360</p>
+        <p class="pie-mega__card-desc">A Solução Global para a Restauração</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Mega-menu: Sobre / GrupoPIE ═══ -->
+  <div class="pie-mega" id="mega-sobre" hidden>
+    <div class="pie-mega__panel">
+      <div class="pie-mega__columns">
+        <div class="pie-mega__col">
+          <h4 class="pie-mega__heading">O GrupoPIE</h4>
+          <a href="{% url 'about' %}" class="pie-mega__link">Quem somos</a>
+          <a href="{% url 'contact' %}" class="pie-mega__link">Recrutamento</a>
+          <a href="{% url 'contact' %}" class="pie-mega__link">Contactos</a>
+        </div>
+        <div class="pie-mega__col">
+          <h4 class="pie-mega__heading">Descubra</h4>
+          <a href="{% url 'clients' %}" class="pie-mega__link">Clientes de Referência</a>
+          <a href="{% url 'success_cases' %}" class="pie-mega__link">Casos de Sucesso</a>
+        </div>
+      </div>
+      <div class="pie-mega__card">
+        <img src="{% static 'images/menu-winrest-thumb-16665b.png' %}" alt="WinRest 360" class="pie-mega__card-img" />
+        <p class="pie-mega__card-title">WinRest 360</p>
+        <p class="pie-mega__card-desc">A Solução Global para a Restauração</p>
+      </div>
+    </div>
+  </div>
 </header>
 
 <script>
-  document.getElementById('pie-menu-toggle').addEventListener('click', function () {
-    document.getElementById('pie-menu-nav').classList.toggle('is-open');
+(function () {
+  const toggle = document.getElementById('pie-menu-toggle');
+  const nav = document.getElementById('pie-menu-nav');
+  const accent = document.getElementById('pie-menu-accent');
+  const dropdowns = document.querySelectorAll('.pie-menu__dropdown');
+  const megas = {
+    solucoes: document.getElementById('mega-solucoes'),
+    produtos: document.getElementById('mega-produtos'),
+    sobre: document.getElementById('mega-sobre'),
+  };
+  let openKey = null;
+
+  function closeAll() {
+    Object.values(megas).forEach(m => m.hidden = true);
+    dropdowns.forEach(d => {
+      d.querySelector('button').setAttribute('aria-expanded', 'false');
+      d.classList.remove('is-open');
+    });
+    accent.style.opacity = '0';
+    openKey = null;
+  }
+
+  function positionAccent(btn) {
+    const r = btn.getBoundingClientRect();
+    const header = document.querySelector('.pie-menu__bar');
+    const hr = header.getBoundingClientRect();
+    accent.style.left = r.left + 'px';
+    accent.style.width = r.width + 'px';
+    accent.style.top = (hr.bottom - 6) + 'px';
+    accent.style.opacity = '1';
+  }
+
+  dropdowns.forEach(dd => {
+    const btn = dd.querySelector('button');
+    const key = dd.dataset.dropdown;
+
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      if (openKey === key) {
+        closeAll();
+        return;
+      }
+      closeAll();
+      openKey = key;
+      megas[key].hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+      dd.classList.add('is-open');
+      positionAccent(btn);
+    });
   });
+
+  document.addEventListener('click', e => {
+    if (openKey && !e.target.closest('.pie-mega') && !e.target.closest('.pie-menu__dropdown')) {
+      closeAll();
+    }
+  });
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
+
+  toggle.addEventListener('click', () => nav.classList.toggle('is-open'));
+})();
 </script>
