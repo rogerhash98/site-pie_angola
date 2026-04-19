@@ -14,13 +14,39 @@
   margin: 0 0 40px;
 }
 
-/* ── 1. HERO ─────────────────────────────────────────────── */
-.pie-hero {
+/* ── 1. HERO CAROUSEL ────────────────────────────────────── */
+.pie-hero-carousel {
   position: relative;
+  width: 100%;
+}
+.pie-hero-carousel__viewport {
+  position: relative;
+  width: 100%;
   min-height: 473px;
-  background: url('../images/hero-banner.png') center center / cover no-repeat;
+}
+
+.pie-hero {
+  position: absolute;
+  inset: 0;
+  min-height: 473px;
   display: flex;
   align-items: center;
+  opacity: 0;
+  transition: opacity 600ms ease;
+  pointer-events: none;
+}
+.pie-hero.is-active {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+}
+.pie-hero[hidden] { display: none; }
+
+.pie-hero--winrest {
+  background: url('../images/hero-banner.png') center center / cover no-repeat;
+}
+.pie-hero--fun {
+  background: url('../images/hero-banner-home21.png') center center / cover no-repeat;
 }
 
 .pie-hero__overlay {
@@ -82,6 +108,32 @@
   text-decoration: none;
   width: 294px;
   text-align: center;
+}
+
+.pie-hero-carousel__dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 3;
+}
+.pie-hero-carousel__dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(30, 30, 30, 0.25);
+  cursor: pointer;
+  transition: background 200ms ease, transform 200ms ease;
+}
+.pie-hero-carousel__dot:hover { background: rgba(201, 49, 49, 0.6); }
+.pie-hero-carousel__dot.is-active {
+  background: #c93131;
+  transform: scale(1.15);
 }
 
 /* ── 2. SOLUÇÕES ─────────────────────────────────────────── */

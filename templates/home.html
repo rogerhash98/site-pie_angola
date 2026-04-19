@@ -16,16 +16,79 @@
 <body>
   {% include 'components/menu/menu.html' %}
 
-  <!-- 1. HERO -->
-  <section class="pie-hero">
-    <div class="pie-hero__overlay"></div>
-    <div class="pie-hero__content container">
-      <p class="pie-hero__sub">+31.000 restaurantes escolhem WinRest</p>
-      <h1 class="pie-hero__title">O software escolhido pelas marcas líderes da restauração</h1>
-      <p class="pie-hero__subtitle">Faturação, pedidos, pagamentos e controlo operacional num único sistema.</p>
-      <a href="#" class="pie-hero__btn">Explorar soluções WinRest</a>
+  <!-- 1. HERO CAROUSEL -->
+  <section class="pie-hero-carousel" aria-roledescription="carousel" aria-label="Soluções em destaque">
+    <div class="pie-hero-carousel__viewport">
+      <div class="pie-hero-carousel__track" data-track>
+
+        <article class="pie-hero pie-hero--winrest is-active" data-slide aria-roledescription="slide" aria-label="1 de 2">
+          <div class="pie-hero__overlay"></div>
+          <div class="pie-hero__content container">
+            <p class="pie-hero__sub">+31.000 restaurantes escolhem WinRest</p>
+            <h1 class="pie-hero__title">O software escolhido pelas marcas líderes da restauração</h1>
+            <p class="pie-hero__subtitle">Faturação, pedidos, pagamentos e controlo operacional num único sistema.</p>
+            <a href="{% url 'product_winrest_nx' %}" class="pie-hero__btn">Explorar soluções WinRest</a>
+          </div>
+        </article>
+
+        <article class="pie-hero pie-hero--fun" data-slide aria-roledescription="slide" aria-label="2 de 2" hidden>
+          <div class="pie-hero__overlay"></div>
+          <div class="pie-hero__content container">
+            <p class="pie-hero__sub">Controlo total de acessos · 360City FUN</p>
+            <h1 class="pie-hero__title">A solução cashless que transforma festivais e eventos</h1>
+            <p class="pie-hero__subtitle">Tudo o que precisa para eventos rápidos, seguros e sem dinheiro.</p>
+            <a href="{% url 'solutions' %}" class="pie-hero__btn">Explorar soluções 360City FUN</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="pie-hero-carousel__dots" role="tablist" aria-label="Selecionar slide">
+      <button type="button" class="pie-hero-carousel__dot is-active" data-dot="0" role="tab" aria-selected="true" aria-label="Ir para slide 1"></button>
+      <button type="button" class="pie-hero-carousel__dot" data-dot="1" role="tab" aria-selected="false" aria-label="Ir para slide 2"></button>
     </div>
   </section>
+
+  <script>
+    (function () {
+      var root = document.querySelector('.pie-hero-carousel');
+      if (!root) return;
+      var slides = root.querySelectorAll('[data-slide]');
+      var dots = root.querySelectorAll('[data-dot]');
+      var current = 0;
+      var timer = null;
+      var INTERVAL = 6000;
+
+      function show(idx) {
+        idx = ((idx % slides.length) + slides.length) % slides.length;
+        slides.forEach(function (s, i) {
+          var active = i === idx;
+          s.classList.toggle('is-active', active);
+          if (active) { s.removeAttribute('hidden'); }
+          else { s.setAttribute('hidden', ''); }
+        });
+        dots.forEach(function (d, i) {
+          var active = i === idx;
+          d.classList.toggle('is-active', active);
+          d.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        current = idx;
+      }
+
+      function start() { stop(); timer = setInterval(function () { show(current + 1); }, INTERVAL); }
+      function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+      dots.forEach(function (d, i) {
+        d.addEventListener('click', function () { show(i); start(); });
+      });
+
+      root.addEventListener('mouseenter', stop);
+      root.addEventListener('mouseleave', start);
+
+      start();
+    })();
+  </script>
 
   <!-- 2. SOLUÇÕES -->
   <section class="pie-sol">
