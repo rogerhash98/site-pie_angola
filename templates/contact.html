@@ -1,22 +1,11 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contactos | PIE Angola</title>
-  <meta name="description" content="Entre em contacto com a equipa PIE Angola. Sede no Condomínio Mirantes de Talatona, Luanda.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cabin:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/components/menu.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/components/help_chat.css' %}" />
-</head>
-<body class="contact-page">
-  {% include 'components/menu/menu.html' %}
 
+{% block title %}Contactos | PIE Angola{% endblock %}
+{% block description %}Entre em contacto com a equipa PIE Angola. Sede no Condomínio Mirantes de Talatona, Luanda.{% endblock %}
+{% block body_class %}contact-page{% endblock %}
+
+{% block content %}
   <main>
 
     <!-- ══════════════════════════════════════
@@ -158,10 +147,5 @@
 
   </main>
 
-  {% include 'components/footer/footer.html' %}
-  {% include 'components/help_chat/help_chat.html' %}
-
-  <script src="{% static 'js/main.js' %}"></script>
-  <script src="{% static 'js/components/help_chat.js' %}"></script>
-</body>
-</html>
+  
+{% endblock %}

@@ -1,22 +1,11 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Casos de Sucesso | PIE Angola</title>
-  <meta name="description" content="Resultados reais com a tecnologia PIE Angola — veja como os nossos clientes evoluem com as nossas soluções.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cabin:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/components/menu.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/components/help_chat.css' %}" />
-</head>
-<body class="success-cases-page">
-  {% include 'components/menu/menu.html' %}
 
+{% block title %}Casos de Sucesso | PIE Angola{% endblock %}
+{% block description %}Resultados reais com a tecnologia PIE Angola — veja como os nossos clientes evoluem com as nossas soluções.{% endblock %}
+{% block body_class %}success-cases-page{% endblock %}
+
+{% block content %}
   <main>
 
     <!-- ══════════════════════════════════════
@@ -106,10 +95,5 @@
 
   </main>
 
-  {% include 'components/footer/footer.html' %}
-  {% include 'components/help_chat/help_chat.html' %}
-
-  <script src="{% static 'js/main.js' %}"></script>
-  <script src="{% static 'js/components/help_chat.js' %}"></script>
-</body>
-</html>
+  
+{% endblock %}

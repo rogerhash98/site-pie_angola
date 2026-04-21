@@ -1,0 +1,111 @@
+/* ═══════════════════════════════════════════════════════════════════
+   PIE Angola — Design Tokens
+   Extraídos do site PIE Portugal (https://wwwpp.grupopie.com/)
+   + Figma file 0Gu9ADLtBcGiPk7gE8lAPG
+   ═══════════════════════════════════════════════════════════════════ */
+:root {
+  /* ───────── Brand ───────── */
+  --pie-red:        #c93131;
+  --pie-red-dark:   #a82828;
+  --pie-red-soft:   #fdecec;
+  --pie-green:      #519371;
+
+  /* ───────── Neutrals ───────── */
+  --pie-black:      #000000;
+  --pie-ink:        #1e1e1e;
+  --pie-text:       #37393f;
+  --pie-text-soft:  #5b5e66;
+  --pie-muted:      #7d7d7d;
+  --pie-line:       #e5e5e5;
+  --pie-line-soft:  #efefef;
+  --pie-bg:         #ffffff;
+  --pie-bg-soft:    #f7f7f7;
+  --pie-bg-alt:     #f4f4f4;
+
+  /* Backwards-compat aliases (legado styles.css) */
+  --bg:        var(--pie-bg);
+  --title:     var(--pie-ink);
+  --text:      var(--pie-text);
+  --muted:     var(--pie-muted);
+  --red:       var(--pie-red);
+  --green:     var(--pie-green);
+  --gray-100:  var(--pie-bg-alt);
+
+  /* ───────── Typography ───────── */
+  --pie-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --pie-font-display: "Inter", sans-serif;
+
+  /* Sizes — derivados do site PT */
+  --pie-fs-xs:   12px;
+  --pie-fs-sm:   14px;
+  --pie-fs-base: 16px;
+  --pie-fs-md:   18px;   /* nav links, body grande, CTA */
+  --pie-fs-lg:   22px;   /* h3 */
+  --pie-fs-xl:   28px;
+  --pie-fs-2xl:  36px;
+  --pie-fs-3xl:  48px;   /* h1 hero */
+  --pie-fs-4xl:  56px;
+
+  /* Weights */
+  --pie-fw-regular: 400;
+  --pie-fw-medium:  500;
+  --pie-fw-semi:    600;
+  --pie-fw-bold:    700;
+  --pie-fw-black:   800;
+
+  /* Line-heights */
+  --pie-lh-tight:  1.15;
+  --pie-lh-snug:   1.25;
+  --pie-lh-normal: 1.5;
+  --pie-lh-relaxed:1.7;
+
+  /* ───────── Spacing scale (px) ───────── */
+  --pie-sp-1:  4px;
+  --pie-sp-2:  8px;
+  --pie-sp-3:  12px;
+  --pie-sp-4:  16px;
+  --pie-sp-5:  24px;
+  --pie-sp-6:  32px;
+  --pie-sp-7:  40px;
+  --pie-sp-8:  48px;
+  --pie-sp-9:  64px;
+  --pie-sp-10: 80px;
+  --pie-sp-11: 96px;
+  --pie-sp-12: 120px;
+
+  /* ───────── Layout ───────── */
+  --pie-container-max: 1280px;
+  --pie-container-pad: 48px;     /* desktop gutters */
+  --pie-container-pad-md: 32px;
+  --pie-container-pad-sm: 20px;
+  --pie-header-h: 96px;
+
+  /* ───────── Radius ───────── */
+  --pie-radius-sm: 4px;
+  --pie-radius:    8px;     /* botão CTA primary (PT) */
+  --pie-radius-md: 10px;    /* botão outlined (PT) */
+  --pie-radius-lg: 16px;
+  --pie-radius-xl: 24px;
+  --pie-radius-pill: 999px;
+
+  /* ───────── Shadows ───────── */
+  --pie-shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+  --pie-shadow:    0 4px 14px rgba(0,0,0,0.08);
+  --pie-shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
+
+  /* ───────── Transitions ───────── */
+  --pie-ease:        cubic-bezier(.4,0,.2,1);
+  --pie-dur-fast:    120ms;
+  --pie-dur:         200ms;
+  --pie-dur-slow:    320ms;
+
+  /* ───────── Z-index ───────── */
+  --pie-z-header: 100;
+  --pie-z-mega:   90;
+  --pie-z-modal:  200;
+  --pie-z-toast:  300;
+}
+
+/* ───────── Breakpoints (use em @media) ─────────
+   sm: 640px   |   md: 768px   |   lg: 1024px   |   xl: 1280px
+*/

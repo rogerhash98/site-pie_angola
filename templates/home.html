@@ -1,24 +1,14 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PIE Angola — Soluções globais para a restauração e retalho</title>
-  <meta name="description" content="PIE Angola — Hardware, software e serviços para restauração, retalho e ponto de venda em Angola. WinRest, PingWin, Booking All e muito mais.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Cabin:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/home.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/components/menu.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/components/help_chat.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/components/help_chat.css' %}" />
-</head>
-<body>
-  {% include 'components/menu/menu.html' %}
 
+{% block title %}PIE Angola — Soluções globais para a restauração e retalho{% endblock %}
+{% block description %}PIE Angola — Hardware, software e serviços para restauração, retalho e ponto de venda em Angola. WinRest, PingWin, Booking All e muito mais.{% endblock %}
+
+{% block head_extra %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock %}
+
+{% block content %}
   <!-- 1. HERO CAROUSEL -->
   <section class="pie-hero-carousel" aria-roledescription="carousel" aria-label="Soluções em destaque">
     <div class="pie-hero-carousel__viewport">
@@ -303,8 +293,5 @@
     </div>
   </section>
 
-  {% include 'components/footer/footer.html' %}
-  {% include 'components/help_chat/help_chat.html' %}
-  <script src="{% static 'js/components/help_chat.js' %}"></script>
-</body>
-</html>
+  
+{% endblock %}

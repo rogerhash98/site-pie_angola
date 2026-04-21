@@ -1,21 +1,9 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mensagem enviada | PIE Angola</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cabin:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/components/menu.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/components/help_chat.css' %}" />
-</head>
-<body>
-  {% include 'components/menu/menu.html' %}
 
+{% block title %}Mensagem enviada | PIE Angola{% endblock %}
+
+{% block content %}
   <main>
     <section class="page-hero contact-success">
       <div class="container">
@@ -27,8 +15,5 @@
     </section>
   </main>
 
-  {% include 'components/footer/footer.html' %}
-  {% include 'components/help_chat/help_chat.html' %}
-
-</body>
-</html>
+  
+{% endblock %}
