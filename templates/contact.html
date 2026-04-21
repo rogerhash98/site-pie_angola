@@ -5,12 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contactos | PIE Angola</title>
-  <meta name="description" content="Entre em contacto com a equipa PIE Angola. Estamos em Luanda, Bairro Militar, Município de Belas.">
+  <meta name="description" content="Entre em contacto com a equipa PIE Angola. Sede no Condomínio Mirantes de Talatona, Luanda.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cabin:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
   <link rel="stylesheet" href="{% static 'css/components/menu.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/help_chat.css' %}" />
 </head>
 <body class="contact-page">
   {% include 'components/menu/menu.html' %}
@@ -25,16 +26,17 @@
       <div class="container contact-hero__inner">
         <div class="contact-hero__content">
           <nav class="contact-breadcrumb" aria-label="Breadcrumb">
-            <a href="{% url 'home' %}">PIE Angola</a>
-            <span aria-hidden="true">&rsaquo;</span>
-            <span>Contactos</span>
+            <span class="contact-breadcrumb__dot" aria-hidden="true"></span>
+            <a href="{% url 'home' %}">O GrupoPIE</a>
+            <span class="contact-breadcrumb__sep" aria-hidden="true">|</span>
+            <strong>Contactos</strong>
           </nav>
           <h1>Fale connosco</h1>
-          <p>Estamos disponíveis para esclarecer dúvidas e encontrar a melhor solução para o seu negócio.</p>
+          <p>Estamos disponíveis para esclarecer dúvidas e encontrar a melhor solução para o seu negócio</p>
         </div>
-      </div>
-      <div class="contact-hero__image-wrap" aria-hidden="true">
-        <img src="{% static 'images/components/about/about-hero-photo-15ed0a.png' %}" alt="" class="contact-hero__image" />
+        <div class="contact-hero__image-wrap" aria-hidden="true">
+          <img src="{% static 'images/components/contact-hero-phone.jpg' %}" alt="" class="contact-hero__image" />
+        </div>
       </div>
     </section>
 
@@ -45,41 +47,36 @@
       <div class="container offices-grid">
 
         <div class="office-card">
-          <h3 class="office-card__title">
-            Luanda
-            <span class="office-badge">Sede PIE Angola</span>
-          </h3>
+          <h3 class="office-card__title">Luanda <span class="office-card__title-suffix">(Sede)</span></h3>
           <address class="office-card__address">
-            Rua A nº 8 / Rua B nº 18<br>
-            Junto ao Centro Logístico de Talatona<br>
-            Bairro Militar, Município de Belas<br>
-            Luanda &mdash; Angola
+            PIE Angola, Lda<br>
+            Condomínio Mirantes de Talatona<br>
+            Talatona, Município do Talatona<br>
+            Luanda — ANGOLA
           </address>
           <div class="office-card__map">
             <iframe
-              src="https://www.google.com/maps?q=Bairro+Militar,+Belas,+Luanda,+Angola&output=embed"
-              width="100%" height="260" style="border:0;border-radius:10px;" allowfullscreen="" loading="lazy"
+              src="https://www.google.com/maps?q=-8.908944,13.197611&z=17&output=embed"
+              width="100%" height="224" style="border:0;" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              title="PIE Angola — Luanda, Bairro Militar"></iframe>
+              title="PIE Angola — Sede, Condomínio Mirantes de Talatona, Luanda"></iframe>
           </div>
         </div>
 
         <div class="office-card">
-          <h3 class="office-card__title">
-            Lisboa
-            <span class="office-badge office-badge--gray">GrupoPIE Portugal</span>
-          </h3>
+          <h3 class="office-card__title">Apoio &amp; Assistência</h3>
           <address class="office-card__address">
-            Rua das Marinhas do Tejo, nº 21<br>
-            3500-370 Santa Iria de Azóia<br>
-            Lisboa &mdash; Portugal
+            <strong>Email geral:</strong> geral@pieangola.com<br>
+            <strong>Comercial:</strong> comercial@pieangola.com<br>
+            <strong>Suporte:</strong> info@pieangola.com<br><br>
+            Soluções de hardware, software e serviços para restauração e retalho em todo o território nacional angolano.
           </address>
           <div class="office-card__map">
             <iframe
-              src="https://www.google.com/maps?q=Santa+Iria+de+Azoia,+Lisboa,+Portugal&output=embed"
-              width="100%" height="260" style="border:0;border-radius:10px;" allowfullscreen="" loading="lazy"
+              src="https://www.google.com/maps?q=Luanda,+Angola&output=embed"
+              width="100%" height="224" style="border:0;" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              title="GrupoPIE Portugal — Lisboa, Santa Iria de Azóia"></iframe>
+              title="PIE Angola — Cobertura Luanda"></iframe>
           </div>
         </div>
 
@@ -101,34 +98,34 @@
           <div class="form-error cform-error" role="alert">{{ error }}</div>
         {% endif %}
 
-        <form class="cform" method="POST" action="{% url 'contact' %}">
+        <form class="cform" method="POST" action="{% url 'contact' %}" novalidate>
           {% csrf_token %}
 
           <div class="cform__grid">
 
-            <div class="cform__cell cform__cell--left">
+            <div class="cform__cell">
               <input type="text" name="name" id="name" placeholder="Nome"
                 value="{{ form_data.name|default:'' }}" required>
             </div>
-            <div class="cform__cell cform__cell--right">
+            <div class="cform__cell">
               <input type="text" name="company" id="company" placeholder="Empresa"
                 value="{{ form_data.company|default:'' }}">
             </div>
 
-            <div class="cform__cell cform__cell--left">
-              <input type="tel" name="phone" id="phone" placeholder="Telefone / telemóvel"
+            <div class="cform__cell">
+              <input type="tel" name="phone" id="phone" placeholder="Telefone/telemóvel"
                 value="{{ form_data.phone|default:'' }}">
             </div>
-            <div class="cform__cell cform__cell--right">
+            <div class="cform__cell">
               <input type="email" name="email" id="email" placeholder="Email"
                 value="{{ form_data.email|default:'' }}" required>
             </div>
 
-            <div class="cform__cell cform__cell--left">
+            <div class="cform__cell">
               <input type="text" name="subject" id="subject" placeholder="Assunto"
                 value="{{ form_data.subject|default:'' }}">
             </div>
-            <div class="cform__cell cform__cell--right">
+            <div class="cform__cell">
               <select name="area" id="area">
                 <option value="" disabled {% if not form_data.area %}selected{% endif %}>Área de interesse</option>
                 <option value="winrest-nx" {% if form_data.area == 'winrest-nx' %}selected{% endif %}>WinRest NX Angola</option>
@@ -150,7 +147,7 @@
               <input type="checkbox" name="privacy" required>
               <span>Li e aceito a <a href="/politica-de-privacidade/">Política de Privacidade</a></span>
             </label>
-            <button type="submit" class="btn btn-red cform__submit">Enviar mensagem</button>
+            <button type="submit" class="cform__submit">Enviar mensagem</button>
           </div>
 
         </form>
@@ -161,8 +158,9 @@
   </main>
 
   {% include 'components/footer/footer.html' %}
+  {% include 'components/help_chat/help_chat.html' %}
 
-  <script src="{% static 'js/components/menu.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/components/help_chat.js' %}"></script>
 </body>
 </html>

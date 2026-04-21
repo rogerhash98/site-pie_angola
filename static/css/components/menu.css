@@ -41,7 +41,7 @@
 
 .pie-menu__logo {
   width: 190px;
-  height: 52px;
+  height: auto;
   display: block;
 }
 
@@ -218,6 +218,13 @@
   background: transparent;
   font-size: 28px;
   cursor: pointer;
+  padding: 8px;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.pie-menu__toggle:hover {
+  background: rgba(28, 28, 28, 0.06);
 }
 
 @media (max-width: 1240px) {
@@ -230,47 +237,267 @@
 }
 
 @media (max-width: 900px) {
+  .pie-menu__bar .pie-menu__container {
+    min-height: 92px;
+    width: min(100%, calc(100% - 32px));
+    gap: 16px;
+  }
+
+  .pie-menu__logo {
+    width: clamp(150px, 44vw, 190px);
+    height: auto;
+  }
+
   .pie-menu__toggle {
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
   }
 
-  .pie-menu__nav {
-    display: none;
-    position: absolute;
-    top: 118px;
-    left: 0;
-    right: 0;
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    padding: 20px 28px;
-    flex-direction: column;
-    gap: 18px;
-    z-index: 100;
+  .pie-menu__nav,
+  .pie-menu__cloud-btn,
+  .pie-mega,
+  .pie-menu__accent-bar {
+    display: none !important;
+  }
+}
+
+/* ═══════════════ Mobile drawer (Figma 15:3361 / 15:3424 / 15:3485 / 15:3541) ═══════════════ */
+.pie-mmenu {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(15, 23, 42, 0);
+  pointer-events: none;
+}
+
+.pie-mmenu.is-open {
+  background: rgba(15, 23, 42, 0.08);
+  pointer-events: auto;
+}
+
+.pie-mmenu[hidden] { display: none; }
+
+.pie-mmenu__panel {
+  width: min(100%, 440px);
+  min-height: 100svh;
+  padding: 24px 28px 40px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  overflow-y: auto;
+  box-shadow: -24px 0 50px rgba(15, 23, 42, 0.14);
+  -webkit-overflow-scrolling: touch;
+}
+
+.pie-mmenu__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.pie-mmenu__logo-link {
+  flex-shrink: 0;
+}
+
+.pie-mmenu__logo {
+  width: clamp(150px, 44vw, 190px);
+  height: auto;
+  display: block;
+}
+
+.pie-mmenu__close {
+  border: 0;
+  background: transparent;
+  padding: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.pie-mmenu__close:hover {
+  background: rgba(28, 28, 28, 0.06);
+}
+
+.pie-mmenu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Accordion groups (use native <details>) */
+.pie-mmenu__group { width: 100%; }
+
+.pie-mmenu__group > summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.pie-mmenu__group > summary::-webkit-details-marker { display: none; }
+
+.pie-mmenu__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 52px;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #2a2d33;
+}
+
+.pie-mmenu__top--sub {
+  font-size: 17px;
+  min-height: 40px;
+  padding-left: 12px;
+}
+
+/* Red chevron (down by default, flips up when <details> open) */
+.pie-mmenu__chev {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.pie-mmenu__chev::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #d33a3a;
+  border-bottom: 2px solid #d33a3a;
+  transform: rotate(45deg);
+  transform-origin: 60% 60%;
+}
+
+.pie-mmenu__group[open] > summary > .pie-mmenu__chev {
+  transform: rotate(180deg);
+}
+
+/* Sub container */
+.pie-mmenu__sub {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.pie-mmenu__group--sub > .pie-mmenu__sub {
+  gap: 2px;
+  padding-top: 2px;
+  padding-left: 12px;
+}
+
+.pie-mmenu__group--sub .pie-mmenu__leaves {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 2px 0 8px 12px;
+}
+
+/* Leaf links */
+.pie-mmenu__leaf {
+  display: block;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #4f565f;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.pie-mmenu__leaf:hover,
+.pie-mmenu__leaf:focus,
+.pie-mmenu__leaf--active {
+  color: #c93131;
+}
+
+.pie-mmenu__leaf--active {
+  font-weight: 600;
+}
+
+/* When inside a top-level group (Produtos / O GrupoPIE) the leaves sit under the title */
+.pie-mmenu__group:not(.pie-mmenu__group--sub) > .pie-mmenu__sub > .pie-mmenu__leaf {
+  padding-left: 12px;
+}
+
+/* Promo card */
+.pie-mmenu__card {
+  margin-top: 8px;
+}
+
+.pie-mmenu__card-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 355 / 173;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.pie-mmenu__card-title {
+  margin: 14px 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #2c2f35;
+}
+
+.pie-mmenu__card-desc {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.35;
+  color: #4f565f;
+}
+
+/* myCloud PIE pill */
+.pie-mmenu__cloud-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(246px, 100%);
+  min-height: 57px;
+  margin: 0 auto;
+  background: #c93131;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  box-shadow: 0 14px 28px rgba(201, 49, 49, 0.18);
+}
+
+@media (min-width: 901px) {
+  .pie-mmenu {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .pie-mmenu__panel {
+    padding: 22px 24px 36px;
   }
 
-  .pie-menu__nav.is-open {
-    display: flex;
+  .pie-mmenu__top {
+    font-size: 17px;
   }
 
-  .pie-menu__cloud-btn {
-    display: none;
-  }
-
-  .pie-mega {
-    position: relative;
-  }
-
-  .pie-mega__panel {
-    flex-direction: column;
-    padding: 24px 0;
-  }
-
-  .pie-mega__columns {
-    flex-direction: column;
-    gap: 28px;
-  }
-
-  .pie-mega__card {
-    display: none;
+  .pie-mmenu__top--sub,
+  .pie-mmenu__leaf,
+  .pie-mmenu__card-desc {
+    font-size: 15px;
   }
 }

@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cabin:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
   <link rel="stylesheet" href="{% static 'css/components/menu.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/help_chat.css' %}" />
 </head>
 <body class="solutions-page">
   {% include 'components/menu/menu.html' %}
@@ -113,19 +114,22 @@
         <h2>Soluções por setor de atividade</h2>
         <div class="sectors-grid">
           <article class="sector-card">
-            <img src="{% static 'images/components/home/card-restauracao.svg' %}" alt="Restauração" class="sector-card__icon">
+            <img src="{% static 'images/sol-restauracao.svg' %}" alt="Restauração" class="sector-card__icon">
             <h3>Restauração e Fast Food</h3>
             <p>Soluções para restaurantes, bares, fast food, snack-bars, pastelarias e franchising</p>
           </article>
           <article class="sector-card">
+            <img src="{% static 'images/sol-comercio.svg' %}" alt="Comércio e Serviços" class="sector-card__icon">
             <h3>Comércio e Serviços</h3>
             <p>Gestão de lojas e superfícies comerciais com POS e backoffice integrados</p>
           </article>
           <article class="sector-card">
+            <img src="{% static 'images/sol-gestao.svg' %}" alt="Hotelaria" class="sector-card__icon">
             <h3>Hotelaria</h3>
             <p>Integração total entre restauração e serviços hoteleiros</p>
           </article>
           <article class="sector-card">
+            <img src="{% static 'images/sol-cashless.svg' %}" alt="Catering e Eventos" class="sector-card__icon">
             <h3>Catering e Eventos</h3>
             <p>Gestão de grandes volumes em eventos, festivais e catering empresarial</p>
           </article>
@@ -143,8 +147,9 @@
   </main>
 
   {% include 'components/footer/footer.html' %}
+  {% include 'components/help_chat/help_chat.html' %}
 
-  <script src="{% static 'js/components/menu.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/components/help_chat.js' %}"></script>
 </body>
 </html>

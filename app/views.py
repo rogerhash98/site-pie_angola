@@ -72,9 +72,22 @@ def success_cases(request):
     return render(request, 'success_cases.html', {'active_menu': 'success_cases'})
 
 
+def success_case_detail(request, slug='h3-new-hamburgology'):
+    return render(request, 'success_case_detail.html', {
+        'active_menu': 'success_cases',
+        'slug': slug,
+    })
+
+
+def recruitment(request):
+    if request.method == 'POST':
+        return redirect('contact_success')
+    return render(request, 'recruitment.html', {'active_menu': 'recruitment'})
+
+
 def product_winrest_nx(request):
-    return render(request, 'products/winrest_nx.html', {'active_menu': 'solutions'})
+    return render(request, 'products/winrest_nx.html', {'active_menu': 'products'})
 
 
 def product_pingwin_bo(request):
-    return render(request, 'products/pingwin_bo.html', {'active_menu': 'solutions'})
+    return render(request, 'products/pingwin_bo.html', {'active_menu': 'products'})

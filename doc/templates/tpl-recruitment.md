@@ -1,0 +1,175 @@
+---
+title: Template · recruitment
+drawer: templates
+source: templates/recruitment.html
+updated: 2026-04-21T01:50:49
+tags: [template, html]
+---
+# Template · recruitment
+
+Ficheiro: `templates/recruitment.html` (6.4 KB)
+
+## Dependências de template
+
+- [[tpl-menu]]
+- [[tpl-footer]]
+- [[tpl-help_chat]]
+
+## Conteúdo
+
+```html
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recrutamento | PIE Angola</title>
+  <meta name="description" content="Junta-te à equipa GrupoPIE — cria tecnologia que faz a diferença.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cabin:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/menu.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/help_chat.css' %}" />
+</head>
+<body class="recruitment-page">
+  {% include 'components/menu/menu.html' %}
+
+  <main>
+
+    <!-- HERO -->
+    <section class="fhero" aria-label="Recrutamento">
+      <div class="container fhero__inner">
+        <div class="fhero__content">
+          <nav class="contact-breadcrumb" aria-label="Breadcrumb">
+            <span class="contact-breadcrumb__dot" aria-hidden="true"></span>
+            <a href="{% url 'home' %}">O GrupoPIE</a>
+            <span class="contact-breadcrumb__sep" aria-hidden="true">|</span>
+            <strong>Recrutamento</strong>
+          </nav>
+          <h1>Cria tecnologia que<br>faz a diferença.</h1>
+          <p>Junta-te à equipa GrupoPIE.</p>
+        </div>
+        <div class="fhero__image-wrap" aria-hidden="true">
+          <img src="{% static 'images/components/rec-hero.jpg' %}" alt="" class="fhero__image" />
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="rec-form-section" aria-labelledby="rec-form-title">
+      <div class="container">
+
+        <h2 id="rec-form-title" class="rec-form-title">Preencha o formulário de candidatura</h2>
+
+        <form class="rec-form" method="POST" action="{% url 'recruitment' %}" enctype="multipart/form-data" novalidate>
+          {% csrf_token %}
+
+          <div class="rec-form__group">
+            <p class="rec-form__legend">Dados pessoais</p>
+            <div class="rec-form__grid2">
+              <input type="text" name="name" placeholder="Nome" required>
+              <input type="email" name="email" placeholder="Email" required>
+              <input type="text" name="academic" placeholder="Percurso académico (opcional)">
+              <input type="text" name="experience" placeholder="Experiência profissional (opcional)">
+            </div>
+          </div>
+
+          <div class="rec-form__group">
+            <p class="rec-form__legend">Seleciona a área de candidatura</p>
+            <select name="area" class="rec-form__select" required>
+              <option value="" disabled selected>Áreas de interesse</option>
+              <option value="desenvolvimento">Desenvolvimento de software</option>
+              <option value="suporte">Suporte técnico</option>
+              <option value="comercial">Comercial</option>
+              <option value="marketing">Marketing</option>
+              <option value="operacoes">Operações</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+
+          <div class="rec-form__group">
+            <p class="rec-form__legend">Currículo (PDF)</p>
+            <label class="rec-form__file">
+              <span class="rec-form__file-btn">Escolher ficheiro</span>
+              <span class="rec-form__file-name" data-default="Nenhum ficheiro selecionado">Nenhum ficheiro selecionado</span>
+              <input type="file" name="cv" accept="application/pdf" hidden>
+            </label>
+            <p class="rec-form__hint"><em>Submeta um PDF menor que 10MB</em></p>
+          </div>
+
+          <div class="rec-form__footer">
+            <label class="rec-form__check">
+              <input type="checkbox" name="privacy" required>
+              <span>Autorizo o tratamento dos meus dados para efeitos de recrutamento.</span>
+            </label>
+            <button type="submit" class="rec-form__submit">Enviar</button>
+          </div>
+
+        </form>
+
+      </div>
+    </section>
+
+    <!-- STATS BANNER -->
+    <section class="rec-stats" aria-label="Os nossos números">
+      <div class="rec-stats__overlay"></div>
+      <div class="container rec-stats__inner">
+        <h2 class="rec-stats__title">Crescemos com as pessoas certas</h2>
+        <p class="rec-stats__subtitle">A nossa equipa é o motor da inovação e da confiança dos nossos clientes</p>
+
+        <div class="rec-stats__grid">
+          <div class="rec-stats__item">
+            <img src="{% static 'images/stats-icon-units.svg' %}" alt="" class="rec-stats__icon">
+            <p class="rec-stats__num">+ 150 colaboradores</p>
+            <p class="rec-stats__label">a construir tecnologia</p>
+          </div>
+          <div class="rec-stats__item">
+            <img src="{% static 'images/stats-icon-pos.svg' %}" alt="" class="rec-stats__icon">
+            <p class="rec-stats__num">+ 100<br>projetos</p>
+            <p class="rec-stats__label">com impacto real</p>
+          </div>
+          <div class="rec-stats__item">
+            <img src="{% static 'images/stats-icon-tickets.svg' %}" alt="" class="rec-stats__icon">
+            <p class="rec-stats__num">+ 31.000 clientes</p>
+            <p class="rec-stats__label">confiam em nós</p>
+          </div>
+          <div class="rec-stats__item">
+            <img src="{% static 'images/stats-icon-globe.svg' %}" alt="" class="rec-stats__icon">
+            <p class="rec-stats__num">+ 15<br>países</p>
+            <p class="rec-stats__label">com presença ativa</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  {% include 'components/footer/footer.html' %}
+  {% include 'components/help_chat/help_chat.html' %}
+
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/components/help_chat.js' %}"></script>
+  <script>
+    // Update file name label when user picks a CV
+    (function () {
+      var input = document.querySelector('.rec-form__file input[type=file]');
+      var label = document.querySelector('.rec-form__file-name');
+      if (input && label) {
+        input.addEventListener('change', function () {
+          label.textContent = input.files && input.files.length
+            ? input.files[0].name
+            : label.dataset.default;
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
+```
+
+## Relacionados
+- [[tpl-menu]]
+- [[tpl-footer]]
+- [[tpl-help_chat]]

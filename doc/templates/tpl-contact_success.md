@@ -1,0 +1,59 @@
+---
+title: Template · contact_success
+drawer: templates
+source: templates/contact_success.html
+updated: 2026-04-21T01:50:49
+tags: [template, html]
+---
+# Template · contact_success
+
+Ficheiro: `templates/contact_success.html` (1.2 KB)
+
+## Dependências de template
+
+- [[tpl-menu]]
+- [[tpl-footer]]
+- [[tpl-help_chat]]
+
+## Conteúdo
+
+```html
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mensagem enviada | PIE Angola</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cabin:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/menu.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/help_chat.css' %}" />
+</head>
+<body>
+  {% include 'components/menu/menu.html' %}
+
+  <main>
+    <section class="page-hero contact-success">
+      <div class="container">
+        <div class="contact-success__icon">✓</div>
+        <h1>Mensagem enviada com sucesso!</h1>
+        <p>Obrigado pelo seu contacto. A nossa equipa responderá brevemente.</p>
+        <a href="{% url 'home' %}" class="btn btn-red">Voltar à página inicial</a>
+      </div>
+    </section>
+  </main>
+
+  {% include 'components/footer/footer.html' %}
+  {% include 'components/help_chat/help_chat.html' %}
+
+</body>
+</html>
+```
+
+## Relacionados
+- [[tpl-menu]]
+- [[tpl-footer]]
+- [[tpl-help_chat]]

@@ -1,0 +1,197 @@
+---
+title: Template · about
+drawer: templates
+source: templates/about.html
+updated: 2026-04-21T01:50:49
+tags: [template, html]
+---
+# Template · about
+
+Ficheiro: `templates/about.html` (9.6 KB)
+
+## Dependências de template
+
+- [[tpl-menu]]
+- [[tpl-footer]]
+- [[tpl-help_chat]]
+
+## Conteúdo
+
+```html
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quem Somos | PIE Angola</title>
+  <meta name="description" content="Conheça a PIE Angola — empresa especializada em soluções tecnológicas de gestão para restauração, retalho e hotelaria.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cabin:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/menu.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/help_chat.css' %}" />
+</head>
+<body class="about-page">
+  {% include 'components/menu/menu.html' %}
+
+  <main>
+
+    <!-- ══════════════════════════════════════
+         HERO — Quem Somos
+    ══════════════════════════════════════ -->
+    <section class="fhero" aria-label="Quem Somos">
+      <div class="container fhero__inner">
+        <div class="fhero__content">
+          <nav class="contact-breadcrumb" aria-label="Breadcrumb">
+            <span class="contact-breadcrumb__dot" aria-hidden="true"></span>
+            <a href="{% url 'home' %}">O GrupoPIE</a>
+            <span class="contact-breadcrumb__sep" aria-hidden="true">|</span>
+            <strong>Quem Somos</strong>
+          </nav>
+          <h1>Tecnologia que faz crescer negócios</h1>
+          <p>Desenvolvemos soluções digitais que simplificam operações, ligam pessoas e impulsionam a economia.</p>
+          <a href="{% url 'contact' %}" class="btn-outline-red">Fale connosco</a>
+        </div>
+        <div class="fhero__image-wrap" aria-hidden="true">
+          <img src="{% static 'images/components/about-hero-fig.jpg' %}" alt="" class="fhero__image" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         STATS — O GrupoPIE em números
+    ══════════════════════════════════════ -->
+    <section class="about-stats" aria-label="O GrupoPIE em números">
+      <div class="container">
+        <h2 class="about-stats__title">O GrupoPIE em números</h2>
+        <ul class="about-stats__list">
+          <li class="about-stats__item">
+            <span class="about-stats__num">+ 33</span>
+            <span class="about-stats__lbl"><strong>anos</strong> de experiência</span>
+          </li>
+          <li class="about-stats__item">
+            <span class="about-stats__num">+ 15</span>
+            <span class="about-stats__lbl"><strong>Países</strong></span>
+          </li>
+          <li class="about-stats__item">
+            <span class="about-stats__num">+ 31.000</span>
+            <span class="about-stats__lbl"><strong>clientes</strong> ativos</span>
+          </li>
+          <li class="about-stats__item">
+            <span class="about-stats__num">+ 60.000</span>
+            <span class="about-stats__lbl"><strong>instalações</strong> POS</span>
+          </li>
+          <li class="about-stats__item">
+            <span class="about-stats__num">+ 10 Milhões</span>
+            <span class="about-stats__lbl">de <strong>tickets</strong>/dia</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         WHO — Quem é o GrupoPIE
+    ══════════════════════════════════════ -->
+    <section class="about-who" aria-labelledby="who-heading">
+      <div class="container about-who__grid">
+        <div class="about-who__text">
+          <h2 id="who-heading" class="about-who__title">Quem é o GrupoPIE</h2>
+          <p>O GrupoPIE é uma empresa portuguesa especializada no desenvolvimento de <strong>soluções tecnológicas de gestão</strong>, fundada em 1995, que apoia negócios em diferentes setores de atividade.</p>
+          <p>Desde a restauração ao retalho, da hotelaria aos eventos e cidades digitais, criamos tecnologia que simplifica processos, melhora a eficiência e acompanha a evolução dos nossos clientes.</p>
+          <p><strong>Trabalhamos com uma abordagem próxima, flexível e orientada a resultados.</strong></p>
+        </div>
+        <div class="about-who__media">
+          <div class="about-who__frame">
+            <img src="{% static 'images/components/about-team-fig.jpg' %}" alt="Equipa GrupoPIE" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         DISTIN — O que nos distingue
+    ══════════════════════════════════════ -->
+    <section class="about-distin" aria-labelledby="distin-heading">
+      <div class="container">
+        <h2 id="distin-heading" class="about-distin__title">O que nos distingue</h2>
+        <div class="about-distin__grid">
+
+          <article class="about-distin__card">
+            <span class="about-distin__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 13.5c2.5 0 4.5 2 4.5 4.5s-2 4.5-4.5 4.5H10.5C7.5 22.5 5 20 5 17a5.5 5.5 0 0 1 5.36-5.5A6.5 6.5 0 0 1 22.5 13a4 4 0 0 1-.5.5z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+            </span>
+            <h3 class="about-distin__name">Especialistas em<br>soluções verticais</h3>
+            <p class="about-distin__desc">Tecnologia adaptada à realidade de cada negócio</p>
+          </article>
+
+          <article class="about-distin__card">
+            <span class="about-distin__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4l10 4v8c0 6-4 10-10 12-6-2-10-6-10-12V8l10-4z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M11.5 16l3 3 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3 class="about-distin__name">Integração total</h3>
+            <p class="about-distin__desc">Software, pagamentos e análise num único ecossistema</p>
+          </article>
+
+          <article class="about-distin__card">
+            <span class="about-distin__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4l12 6-12 6L4 10l12-6z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M4 16l12 6 12-6M4 22l12 6 12-6" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+            </span>
+            <h3 class="about-distin__name">Escalável e modular</h3>
+            <p class="about-distin__desc">Solução que crescem ao ritmo do negócio</p>
+          </article>
+
+          <article class="about-distin__card">
+            <span class="about-distin__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><circle cx="16" cy="16" r="3.5" stroke="#fff" stroke-width="2"/></svg>
+            </span>
+            <h3 class="about-distin__name">Proximidade e<br>suporte</h3>
+            <p class="about-distin__desc">Acompanhamento próximo com suporte local especializado</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         LOGOS — Marcas que confiam
+    ══════════════════════════════════════ -->
+    <section class="flogos-section" aria-label="Marcas que confiam em nós">
+      <div class="container">
+        <div class="flogos-grid">
+          {% for n in "123456789"|make_list %}
+            <div class="flogo-cell"><img src="{% static 'images/client-logo-'|add:n|add:'.png' %}" alt="" aria-hidden="true" /></div>
+          {% endfor %}
+          {% for n in "123456789"|make_list %}
+            <div class="flogo-cell"><img src="{% static 'images/client-logo-'|add:n|add:'.png' %}" alt="" aria-hidden="true" /></div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CTA BANNER — Vermelho
+    ══════════════════════════════════════ -->
+    <section class="fcta-banner" aria-label="Saiba mais">
+      <div class="container fcta-banner__inner fcta-banner__inner--center">
+        <p class="fcta-banner__text fcta-banner__text--center">A tecnologia certa para o seu negócio<br>completa, simples e integrada.</p>
+        <a href="{% url 'contact' %}" class="fcta-banner__btn">Quero saber mais</a>
+      </div>
+    </section>
+
+  </main>
+
+  {% include 'components/footer/footer.html' %}
+  {% include 'components/help_chat/help_chat.html' %}
+
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/components/help_chat.js' %}"></script>
+</body>
+</html>
+```
+
+## Relacionados
+- [[tpl-menu]]
+- [[tpl-footer]]
+- [[tpl-help_chat]]

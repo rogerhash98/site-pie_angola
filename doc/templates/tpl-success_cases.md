@@ -1,0 +1,140 @@
+---
+title: Template · success_cases
+drawer: templates
+source: templates/success_cases.html
+updated: 2026-04-21T01:50:49
+tags: [template, html]
+---
+# Template · success_cases
+
+Ficheiro: `templates/success_cases.html` (6.5 KB)
+
+## Dependências de template
+
+- [[tpl-menu]]
+- [[tpl-footer]]
+- [[tpl-help_chat]]
+
+## Conteúdo
+
+```html
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casos de Sucesso | PIE Angola</title>
+  <meta name="description" content="Resultados reais com a tecnologia PIE Angola — veja como os nossos clientes evoluem com as nossas soluções.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cabin:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/menu.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/help_chat.css' %}" />
+</head>
+<body class="success-cases-page">
+  {% include 'components/menu/menu.html' %}
+
+  <main>
+
+    <!-- ══════════════════════════════════════
+         HERO — Casos de Sucesso
+    ══════════════════════════════════════ -->
+    <section class="fhero" aria-label="Casos de Sucesso">
+      <div class="container fhero__inner">
+        <div class="fhero__content">
+          <nav class="contact-breadcrumb" aria-label="Breadcrumb">
+            <span class="contact-breadcrumb__dot" aria-hidden="true"></span>
+            <a href="{% url 'home' %}">O GrupoPIE</a>
+            <span class="contact-breadcrumb__sep" aria-hidden="true">|</span>
+            <strong>Casos de Sucesso</strong>
+          </nav>
+          <h1>Resultados reais com a nossa tecnologia</h1>
+          <p>Veja como os nossos clientes evoluem com as nossas soluções.</p>
+          <a href="{% url 'contact' %}" class="btn-outline-red">Fale connosco</a>
+        </div>
+        <div class="fhero__image-wrap" aria-hidden="true">
+          <img src="{% static 'images/components/sc-hero.jpg' %}" alt="" class="fhero__image" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CASES — 3 cols × 2 rows
+    ══════════════════════════════════════ -->
+    <section class="fcases-section" aria-label="Casos de sucesso">
+      <div class="container">
+        <div class="fcases-grid">
+
+          <article class="fcase-card">
+            <img class="fcase-card__img" src="{% static 'images/news-1-2149ac.png' %}" alt="Kiosk de pedidos">
+            <h3 class="fcase-card__title">Kiosk de pedidos</h3>
+            <p class="fcase-card__text">Integração com kiosks de atendimento automático para a realização de pedidos, reduzindo filas e melhorando a experiência do cliente.</p>
+            <a href="{% url 'success_case_detail' slug='h3-new-hamburgology' %}" class="fcase-card__link">Ler Mais</a>
+          </article>
+
+          <article class="fcase-card">
+            <img class="fcase-card__img" src="{% static 'images/news-2-8633ce.png' %}" alt="Gestão centralizada">
+            <h3 class="fcase-card__title">Gestão centralizada de cadeias</h3>
+            <p class="fcase-card__text">Backoffice único para gerir todos os estabelecimentos em tempo real, com controlo de stocks e indicadores operacionais.</p>
+            <a href="{% url 'success_case_detail' slug='h3-new-hamburgology' %}" class="fcase-card__link">Ler Mais</a>
+          </article>
+
+          <article class="fcase-card">
+            <img class="fcase-card__img" src="{% static 'images/news-3-6ad800.png' %}" alt="Faturação eletrónica">
+            <h3 class="fcase-card__title">Faturação eletrónica conforme</h3>
+            <p class="fcase-card__text">Emissão de fatura eletrónica em conformidade com a legislação angolana, garantindo transparência fiscal em todos os pontos de venda.</p>
+            <a href="{% url 'success_case_detail' slug='h3-new-hamburgology' %}" class="fcase-card__link">Ler Mais</a>
+          </article>
+
+          <article class="fcase-card">
+            <img class="fcase-card__img" src="{% static 'images/news-1-72be09.png' %}" alt="Mobilidade no atendimento">
+            <h3 class="fcase-card__title">Mobilidade no atendimento</h3>
+            <p class="fcase-card__text">PDA's e dispositivos móveis a comunicar diretamente com o sistema central, agilizando pedidos em sala e take-away.</p>
+            <a href="{% url 'success_case_detail' slug='h3-new-hamburgology' %}" class="fcase-card__link">Ler Mais</a>
+          </article>
+
+          <article class="fcase-card">
+            <img class="fcase-card__img" src="{% static 'images/news-2-52645b.png' %}" alt="Self-checkout">
+            <h3 class="fcase-card__title">Self-checkout em retalho</h3>
+            <p class="fcase-card__text">Soluções de self-checkout adaptadas ao retalho alimentar, reduzindo tempo de espera e otimizando a operação em loja.</p>
+            <a href="{% url 'success_case_detail' slug='h3-new-hamburgology' %}" class="fcase-card__link">Ler Mais</a>
+          </article>
+
+          <article class="fcase-card">
+            <img class="fcase-card__img" src="{% static 'images/news-3.png' %}" alt="Programas de fidelização">
+            <h3 class="fcase-card__title">Programas de fidelização</h3>
+            <p class="fcase-card__text">Plataformas integradas de loyalty e CRM, permitindo personalizar campanhas e fidelizar clientes com base em dados reais.</p>
+            <a href="{% url 'success_case_detail' slug='h3-new-hamburgology' %}" class="fcase-card__link">Ler Mais</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CTA BANNER — Vermelho
+    ══════════════════════════════════════ -->
+    <section class="fcta-banner" aria-label="Saiba mais">
+      <div class="container fcta-banner__inner">
+        <p class="fcta-banner__text">A tecnologia certa para o seu negócio<br>completa, simples e integrada.</p>
+        <a href="{% url 'contact' %}" class="fcta-banner__btn">Quero saber mais</a>
+      </div>
+    </section>
+
+  </main>
+
+  {% include 'components/footer/footer.html' %}
+  {% include 'components/help_chat/help_chat.html' %}
+
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/components/help_chat.js' %}"></script>
+</body>
+</html>
+```
+
+## Relacionados
+- [[tpl-menu]]
+- [[tpl-footer]]
+- [[tpl-help_chat]]

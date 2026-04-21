@@ -1,0 +1,161 @@
+---
+title: Template · menu
+drawer: componentes
+source: templates/components/menu/menu.html
+updated: 2026-04-21T01:50:49
+tags: [template, html]
+---
+# Template · menu
+
+Ficheiro: `templates/components/menu/menu.html` (8.0 KB)
+
+## Conteúdo
+
+```html
+{% load static %}
+<header class="pie-menu">
+  <div class="pie-menu__bar">
+    <div class="pie-menu__container">
+      <a href="{% url 'home' %}" class="pie-menu__logo-link" aria-label="GrupoPIE">
+        <img src="{% static 'images/menu-logo.svg' %}" alt="GrupoPIE" class="pie-menu__logo" />
+      </a>
+
+      <button id="pie-menu-toggle" class="pie-menu__toggle" type="button" aria-label="Abrir menu" aria-controls="pie-mmenu" aria-expanded="false">
+        <svg width="26" height="20" viewBox="0 0 26 20" fill="none" aria-hidden="true">
+          <path d="M1 2 H25 M1 10 H25 M1 18 H25" stroke="#1c1c1c" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <nav id="pie-menu-nav" class="pie-menu__nav" aria-label="Navegação principal">
+        <!-- Conheça — Soluções (link directo: só existe 1 página de soluções) -->
+        <a href="{% url 'solutions' %}" class="pie-menu__item pie-menu__item--link{% if active_menu == 'solutions' %} pie-menu__item--active{% endif %}">
+          <span class="pie-menu__title">Conheça</span>
+          <span class="pie-menu__subtitle">as nossas soluções</span>
+        </a>
+
+        <!-- Escolha — Produtos dropdown (2 produtos reais) -->
+        <div class="pie-menu__dropdown" data-dropdown="produtos">
+          <button class="pie-menu__item{% if active_menu == 'products' %} pie-menu__item--active{% endif %}" type="button" aria-expanded="false">
+            <span class="pie-menu__title">Escolha</span>
+            <span class="pie-menu__subtitle">os nossos produtos <img src="{% static 'images/menu-arrow-down.svg' %}" alt="" class="pie-menu__arrow" /></span>
+          </button>
+        </div>
+
+        <!-- Sobre — GrupoPIE dropdown (5 páginas distintas) -->
+        <div class="pie-menu__dropdown" data-dropdown="sobre">
+          <button class="pie-menu__item{% if active_menu == 'about' or active_menu == 'clients' or active_menu == 'success_cases' or active_menu == 'recruitment' or active_menu == 'contact' %} pie-menu__item--active{% endif %}" type="button" aria-expanded="false">
+            <span class="pie-menu__title">Sobre</span>
+            <span class="pie-menu__subtitle">o GrupoPIE <img src="{% static 'images/menu-arrow-down.svg' %}" alt="" class="pie-menu__arrow" /></span>
+          </button>
+        </div>
+      </nav>
+
+      <a href="https://www.mycloudpie.com/" class="pie-menu__cloud-btn" target="_blank" rel="noopener">myCloud PIE</a>
+    </div>
+  </div>
+
+  <!-- ═══ Mobile drawer (responsive menu) ═══ -->
+  <div class="pie-mmenu" id="pie-mmenu" hidden aria-hidden="true">
+    <div class="pie-mmenu__panel" role="dialog" aria-modal="true" aria-label="Menu principal">
+      <div class="pie-mmenu__head">
+        <a href="{% url 'home' %}" class="pie-mmenu__logo-link" aria-label="GrupoPIE">
+          <img src="{% static 'images/menu-logo.svg' %}" alt="GrupoPIE" class="pie-mmenu__logo" />
+        </a>
+        <button type="button" class="pie-mmenu__close" id="pie-mmenu-close" aria-label="Fechar menu">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M3 3 L17 17 M17 3 L3 17" stroke="#1c1c1c" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="pie-mmenu__nav" aria-label="Navegação móvel">
+        <!-- Soluções (link directo, sem accordion: só 1 página) -->
+        <a href="{% url 'solutions' %}" class="pie-mmenu__top pie-mmenu__top--link{% if active_menu == 'solutions' %} pie-mmenu__group--active{% endif %}">
+          <span>Soluções</span>
+        </a>
+
+        <!-- Produtos -->
+        <details class="pie-mmenu__group{% if active_menu == 'products' %} pie-mmenu__group--active{% endif %}" data-mobile-group="products">
+          <summary class="pie-mmenu__top" aria-expanded="false">
+            <span>Produtos</span>
+            <span class="pie-mmenu__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="pie-mmenu__sub">
+            <a href="{% url 'product_winrest_nx' %}" class="pie-mmenu__leaf">WinREST</a>
+            <a href="{% url 'product_pingwin_bo' %}" class="pie-mmenu__leaf">PingWin BO</a>
+          </div>
+        </details>
+
+        <!-- O GrupoPIE -->
+        <details class="pie-mmenu__group{% if active_menu == 'about' or active_menu == 'clients' or active_menu == 'success_cases' or active_menu == 'recruitment' or active_menu == 'contact' %} pie-mmenu__group--active{% endif %}" data-mobile-group="sobre">
+          <summary class="pie-mmenu__top" aria-expanded="false">
+            <span>O GrupoPIE</span>
+            <span class="pie-mmenu__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="pie-mmenu__sub">
+            <a href="{% url 'about' %}" class="pie-mmenu__leaf{% if active_menu == 'about' %} pie-mmenu__leaf--active{% endif %}">Quem somos</a>
+            <a href="{% url 'clients' %}" class="pie-mmenu__leaf{% if active_menu == 'clients' %} pie-mmenu__leaf--active{% endif %}">Clientes de Referência</a>
+            <a href="{% url 'success_cases' %}" class="pie-mmenu__leaf{% if active_menu == 'success_cases' %} pie-mmenu__leaf--active{% endif %}">Casos de Sucesso</a>
+            <a href="{% url 'recruitment' %}" class="pie-mmenu__leaf{% if active_menu == 'recruitment' %} pie-mmenu__leaf--active{% endif %}">Recrutamento</a>
+            <a href="{% url 'contact' %}" class="pie-mmenu__leaf{% if active_menu == 'contact' %} pie-mmenu__leaf--active{% endif %}">Contactos</a>
+          </div>
+        </details>
+      </nav>
+
+      <div class="pie-mmenu__card">
+        <img src="{% static 'images/menu-winrest-thumb-16665b.png' %}" alt="WinRest 360" class="pie-mmenu__card-img" />
+        <p class="pie-mmenu__card-title">WinRest 360</p>
+        <p class="pie-mmenu__card-desc">A Solução Global para a Restauração</p>
+      </div>
+
+      <a href="https://www.mycloudpie.com/" class="pie-mmenu__cloud-btn" target="_blank" rel="noopener">myCloud PIE</a>
+    </div>
+  </div>
+
+  <!-- Red accent bar (shows under active dropdown) -->
+  <div class="pie-menu__accent-bar" id="pie-menu-accent"></div>
+
+  <!-- ═══ Mega-menu: Produtos (2 produtos reais) ═══ -->
+  <div class="pie-mega" id="mega-produtos" hidden>
+    <div class="pie-mega__panel">
+      <div class="pie-mega__columns">
+        <div class="pie-mega__col">
+          <h4 class="pie-mega__heading">Os nossos produtos</h4>
+          <a href="{% url 'product_winrest_nx' %}" class="pie-mega__link">WinREST</a>
+          <a href="{% url 'product_pingwin_bo' %}" class="pie-mega__link">PingWin BO</a>
+        </div>
+      </div>
+      <div class="pie-mega__card">
+        <img src="{% static 'images/menu-winrest-thumb-16665b.png' %}" alt="WinRest 360" class="pie-mega__card-img" />
+        <p class="pie-mega__card-title">WinRest 360</p>
+        <p class="pie-mega__card-desc">A Solução Global para a Restauração</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Mega-menu: Sobre / GrupoPIE (5 páginas distintas) ═══ -->
+  <div class="pie-mega" id="mega-sobre" hidden>
+    <div class="pie-mega__panel">
+      <div class="pie-mega__columns">
+        <div class="pie-mega__col">
+          <h4 class="pie-mega__heading">O GrupoPIE</h4>
+          <a href="{% url 'about' %}" class="pie-mega__link">Quem somos</a>
+          <a href="{% url 'recruitment' %}" class="pie-mega__link">Recrutamento</a>
+          <a href="{% url 'contact' %}" class="pie-mega__link">Contactos</a>
+        </div>
+        <div class="pie-mega__col">
+          <h4 class="pie-mega__heading">Descubra</h4>
+          <a href="{% url 'clients' %}" class="pie-mega__link">Clientes de Referência</a>
+          <a href="{% url 'success_cases' %}" class="pie-mega__link">Casos de Sucesso</a>
+        </div>
+      </div>
+      <div class="pie-mega__card">
+        <img src="{% static 'images/menu-winrest-thumb-16665b.png' %}" alt="WinRest 360" class="pie-mega__card-img" />
+        <p class="pie-mega__card-title">WinRest 360</p>
+        <p class="pie-mega__card-desc">A Solução Global para a Restauração</p>
+      </div>
+    </div>
+  </div>
+</header>
+<script src="{% static 'js/components/menu.js' %}"></script>
+```

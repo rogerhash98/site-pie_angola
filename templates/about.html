@@ -4,124 +4,168 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sobre nós | PIE Angola</title>
-  <meta name="description" content="Conheça a PIE Angola — subsidiária da GrupoPIE Portugal com presença em Angola há mais de 4 anos, servindo cerca de 2.000 restaurantes e as maiores marcas de fast food.">
+  <title>Quem Somos | PIE Angola</title>
+  <meta name="description" content="Conheça a PIE Angola — empresa especializada em soluções tecnológicas de gestão para restauração, retalho e hotelaria.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cabin:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cabin:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
   <link rel="stylesheet" href="{% static 'css/components/menu.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/help_chat.css' %}" />
 </head>
 <body class="about-page">
   {% include 'components/menu/menu.html' %}
 
   <main>
-    <section class="about-hero" aria-label="Sobre nós">
-      <div class="about-hero__bg"></div>
-      <div class="container about-hero__inner">
-        <div class="about-hero__content">
-          <div class="about-eyebrow"><span></span>Sobre nós</div>
-          <h1>Há mais de 4 anos a transformar a restauração em Angola</h1>
-          <p>A PIE Angola é a subsidiária angolana da GrupoPIE Portugal, líder em software de gestão para restauração há mais de 33 anos.</p>
-        </div>
-      </div>
-      <img src="{% static 'images/components/about/about-hero-photo-15ed0a.png' %}" alt="Equipa PIE Angola" class="about-hero__image" />
-    </section>
 
-    <section class="about-history section">
-      <div class="container about-history__grid">
-        <div class="about-history__image-wrap">
-          <img src="{% static 'images/components/about/about-history-photo-38d9f1.png' %}" alt="Equipa PIE Angola" class="about-history__image" />
-          <div class="about-history__lead">
-            <h3>Líder tecnológico em Angola</h3>
-            <p>Estamos em constante busca pela inovação, visando proporcionar as ferramentas essenciais para a gestão abrangente do seu negócio em Angola.</p>
-            <a href="{% url 'contact' %}" class="btn btn-red">Entre em contacto</a>
-          </div>
+    <!-- ══════════════════════════════════════
+         HERO — Quem Somos
+    ══════════════════════════════════════ -->
+    <section class="fhero" aria-label="Quem Somos">
+      <div class="container fhero__inner">
+        <div class="fhero__content">
+          <nav class="contact-breadcrumb" aria-label="Breadcrumb">
+            <span class="contact-breadcrumb__dot" aria-hidden="true"></span>
+            <a href="{% url 'home' %}">O GrupoPIE</a>
+            <span class="contact-breadcrumb__sep" aria-hidden="true">|</span>
+            <strong>Quem Somos</strong>
+          </nav>
+          <h1>Tecnologia que faz crescer negócios</h1>
+          <p>Desenvolvemos soluções digitais que simplificam operações, ligam pessoas e impulsionam a economia.</p>
+          <a href="{% url 'contact' %}" class="btn-outline-red">Fale connosco</a>
         </div>
-
-        <div class="about-history__content">
-          <div class="about-eyebrow about-eyebrow--dark"><span></span>A nossa História</div>
-          <h2>Quem é a PIE Angola</h2>
-          <p>A PIE Angola é a subsidiária angolana da <strong>GrupoPIE Portugal</strong>, empresa fundada em 1991 e especializada no desenvolvimento de software e soluções para restauração, retalho, mobilidade, hotelaria e eventos.</p>
-          <p>A presença em Angola iniciou-se com o objetivo de apoiar o crescimento da restauração organizada no país, trazendo tecnologia de ponta adaptada ao contexto local. Hoje, a PIE Angola é o parceiro tecnológico das maiores marcas de fast food presentes em Angola, com cerca de <strong>2.000 restaurantes</strong> a operar com as nossas soluções.</p>
-          <p>O nosso escritório está localizado no <strong>Bairro Militar, Município de Belas, Luanda</strong>, junto ao Centro Logístico de Talatona, e a nossa equipa está sempre disponível para apoiar os nossos clientes com formação, suporte técnico e implementação.</p>
-          <p>Como parte do GrupoPIE, beneficiamos de uma rede global presente em <strong>mais de 50 países</strong>, com soluções certificadas e conformes com a legislação fiscal angolana.</p>
+        <div class="fhero__image-wrap" aria-hidden="true">
+          <img src="{% static 'images/components/about-hero-fig.jpg' %}" alt="" class="fhero__image" />
         </div>
       </div>
     </section>
 
-    <section class="about-trust section">
+    <!-- ══════════════════════════════════════
+         STATS — O GrupoPIE em números
+    ══════════════════════════════════════ -->
+    <section class="about-stats" aria-label="O GrupoPIE em números">
       <div class="container">
-        <div class="about-trust__title">
-          <div class="about-eyebrow about-eyebrow--dark"><span></span>Experiência</div>
-          <h2>Soluções de confiança para Angola</h2>
-        </div>
-        <div class="about-trust__cards">
-          <article class="about-trust-card">
-            <img src="{% static 'images/components/about/about-trust-icon-1.svg' %}" alt="Restaurantes em Angola" class="about-trust-card__icon" />
-            <h3>~2.000 restaurantes</h3>
-            <p>Cerca de 2.000 restaurantes em Angola confiam nas nossas soluções para faturação e gestão diária dos seus negócios.</p>
-            <a href="{% url 'clients' %}">Clientes referência</a>
-          </article>
-          <article class="about-trust-card">
-            <img src="{% static 'images/components/about/about-trust-icon-2.svg' %}" alt="Soluções angolanas" class="about-trust-card__icon" />
-            <h3>Soluções para Angola</h3>
-            <p>Soluções desenvolvidas e adaptadas ao mercado angolano, com conformidade fiscal local e suporte técnico em Luanda.</p>
-            <a href="{% url 'solutions' %}">Soluções PIE Angola</a>
-          </article>
-          <article class="about-trust-card">
-            <img src="{% static 'images/components/about/about-trust-icon-3.svg' %}" alt="33 anos de experiência" class="about-trust-card__icon" />
-            <h3>33 anos de experiência</h3>
-            <p>A GrupoPIE Portugal foi fundada em 1991. Mais de 3 décadas de inovação tecnológica ao serviço da restauração mundial.</p>
-            <a href="{% url 'solutions' %}">Produtos PIE Angola</a>
-          </article>
-        </div>
+        <h2 class="about-stats__title">O GrupoPIE em números</h2>
+        <ul class="about-stats__list">
+          <li class="about-stats__item">
+            <span class="about-stats__num">+ 33</span>
+            <span class="about-stats__lbl"><strong>anos</strong> de experiência</span>
+          </li>
+          <li class="about-stats__item">
+            <span class="about-stats__num">+ 15</span>
+            <span class="about-stats__lbl"><strong>Países</strong></span>
+          </li>
+          <li class="about-stats__item">
+            <span class="about-stats__num">+ 31.000</span>
+            <span class="about-stats__lbl"><strong>clientes</strong> ativos</span>
+          </li>
+          <li class="about-stats__item">
+            <span class="about-stats__num">+ 60.000</span>
+            <span class="about-stats__lbl"><strong>instalações</strong> POS</span>
+          </li>
+          <li class="about-stats__item">
+            <span class="about-stats__num">+ 10 Milhões</span>
+            <span class="about-stats__lbl">de <strong>tickets</strong>/dia</span>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section class="about-address section">
-      <div class="container about-address__inner">
-        <div class="about-eyebrow about-eyebrow--dark"><span></span>Localização</div>
-        <h2>Encontre-nos em Luanda</h2>
-        <div class="about-address__grid">
-          <div class="about-address__info">
-            <div class="about-address__item">
-              <strong>Morada</strong>
-              <p>Rua A nº 8 / Rua B nº 18<br>Junto ao Centro Logístico de Talatona<br>Bairro Militar, Município de Belas<br>Luanda — Angola</p>
-            </div>
-            <div class="about-address__item">
-              <strong>Contactos</strong>
-              <p>
-                <a href="tel:+244926000000">(+244) 926 000 000</a><br>
-                <a href="mailto:info@pieangola.com">info@pieangola.com</a>
-              </p>
-            </div>
-            <a href="{% url 'contact' %}" class="btn btn-red">Enviar mensagem</a>
-          </div>
-          <div class="about-address__map">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.0!2d13.28!3d-8.94!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBairro+Militar%2C+Belas%2C+Luanda!5e0!3m2!1spt!2sao!4v1!5m2!1spt!2sao"
-              width="100%" height="320" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade" title="Localização PIE Angola"></iframe>
+    <!-- ══════════════════════════════════════
+         WHO — Quem é o GrupoPIE
+    ══════════════════════════════════════ -->
+    <section class="about-who" aria-labelledby="who-heading">
+      <div class="container about-who__grid">
+        <div class="about-who__text">
+          <h2 id="who-heading" class="about-who__title">Quem é o GrupoPIE</h2>
+          <p>A <strong>PIE Angola</strong> é uma empresa especializada em <strong>soluções globais para a restauração e retalho</strong>, oferecendo hardware, software e serviços para potenciar a atividade do seu negócio em todo o território nacional. Faz parte do GrupoPIE — referência em tecnologia de gestão para ponto de venda desde 1995.</p>
+          <p>Desde a restauração ao retalho, da hotelaria aos eventos e cidades digitais, criamos tecnologia que simplifica processos, melhora a eficiência e acompanha a evolução dos nossos clientes.</p>
+          <p><strong>Trabalhamos com uma abordagem próxima, flexível e orientada a resultados.</strong></p>
+        </div>
+        <div class="about-who__media">
+          <div class="about-who__frame">
+            <img src="{% static 'images/components/about-team-fig.jpg' %}" alt="Equipa GrupoPIE" />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contacto" class="about-contact">
-      <img src="{% static 'images/components/about/about-contact-bg-428c4f.png' %}" alt="" class="about-contact__bg" />
-      <div class="about-contact__overlay"></div>
-      <div class="container about-contact__content">
-        <h2>Fale com a equipa PIE Angola</h2>
-        <p>Se deseja saber mais sobre como a PIE Angola pode apoiar o seu negócio, entre em contacto connosco.</p>
-        <a href="{% url 'contact' %}" class="btn btn-light">Entre em contacto</a>
+    <!-- ══════════════════════════════════════
+         DISTIN — O que nos distingue
+    ══════════════════════════════════════ -->
+    <section class="about-distin" aria-labelledby="distin-heading">
+      <div class="container">
+        <h2 id="distin-heading" class="about-distin__title">O que nos distingue</h2>
+        <div class="about-distin__grid">
+
+          <article class="about-distin__card">
+            <span class="about-distin__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 13.5c2.5 0 4.5 2 4.5 4.5s-2 4.5-4.5 4.5H10.5C7.5 22.5 5 20 5 17a5.5 5.5 0 0 1 5.36-5.5A6.5 6.5 0 0 1 22.5 13a4 4 0 0 1-.5.5z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+            </span>
+            <h3 class="about-distin__name">Especialistas em<br>soluções verticais</h3>
+            <p class="about-distin__desc">Tecnologia adaptada à realidade de cada negócio</p>
+          </article>
+
+          <article class="about-distin__card">
+            <span class="about-distin__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4l10 4v8c0 6-4 10-10 12-6-2-10-6-10-12V8l10-4z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M11.5 16l3 3 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3 class="about-distin__name">Integração total</h3>
+            <p class="about-distin__desc">Software, pagamentos e análise num único ecossistema</p>
+          </article>
+
+          <article class="about-distin__card">
+            <span class="about-distin__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4l12 6-12 6L4 10l12-6z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M4 16l12 6 12-6M4 22l12 6 12-6" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+            </span>
+            <h3 class="about-distin__name">Escalável e modular</h3>
+            <p class="about-distin__desc">Solução que crescem ao ritmo do negócio</p>
+          </article>
+
+          <article class="about-distin__card">
+            <span class="about-distin__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><circle cx="16" cy="16" r="3.5" stroke="#fff" stroke-width="2"/></svg>
+            </span>
+            <h3 class="about-distin__name">Proximidade e<br>suporte</h3>
+            <p class="about-distin__desc">Acompanhamento próximo com suporte local especializado</p>
+          </article>
+
+        </div>
       </div>
     </section>
+
+    <!-- ══════════════════════════════════════
+         LOGOS — Marcas que confiam
+    ══════════════════════════════════════ -->
+    <section class="flogos-section" aria-label="Marcas que confiam em nós">
+      <div class="container">
+        <div class="flogos-grid">
+          {% for n in "123456789"|make_list %}
+            <div class="flogo-cell"><img src="{% static 'images/client-logo-'|add:n|add:'.png' %}" alt="" aria-hidden="true" /></div>
+          {% endfor %}
+          {% for n in "123456789"|make_list %}
+            <div class="flogo-cell"><img src="{% static 'images/client-logo-'|add:n|add:'.png' %}" alt="" aria-hidden="true" /></div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CTA BANNER — Vermelho
+    ══════════════════════════════════════ -->
+    <section class="fcta-banner" aria-label="Saiba mais">
+      <div class="container fcta-banner__inner fcta-banner__inner--center">
+        <p class="fcta-banner__text fcta-banner__text--center">A tecnologia certa para o seu negócio<br>completa, simples e integrada.</p>
+        <a href="{% url 'contact' %}" class="fcta-banner__btn">Quero saber mais</a>
+      </div>
+    </section>
+
   </main>
 
   {% include 'components/footer/footer.html' %}
+  {% include 'components/help_chat/help_chat.html' %}
 
-  <script src="{% static 'js/components/menu.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/components/help_chat.js' %}"></script>
 </body>
 </html>

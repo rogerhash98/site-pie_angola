@@ -39,3 +39,11 @@ htmlcov/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Playwright MCP debug artifacts
+.playwright-mcp/
+
+# Obsidian vault — workspace state and plugin data (contains secrets)
+doc/.obsidian/workspace.json
+doc/.obsidian/workspace-mobile.json
+doc/.obsidian/plugins/

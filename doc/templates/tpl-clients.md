@@ -1,0 +1,143 @@
+---
+title: Template · clients
+drawer: templates
+source: templates/clients.html
+updated: 2026-04-21T01:50:49
+tags: [template, html]
+---
+# Template · clients
+
+Ficheiro: `templates/clients.html` (6.4 KB)
+
+## Dependências de template
+
+- [[tpl-menu]]
+- [[tpl-footer]]
+- [[tpl-help_chat]]
+
+## Conteúdo
+
+```html
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clientes de Referência | PIE Angola</title>
+  <meta name="description" content="Temos a confiança dos melhores. Conheça os clientes de referência da PIE Angola.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cabin:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/menu.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/help_chat.css' %}" />
+</head>
+<body class="clients-page">
+  {% include 'components/menu/menu.html' %}
+
+  <main>
+
+    <!-- ══════════════════════════════════════
+         HERO — Clientes de Referência
+    ══════════════════════════════════════ -->
+    <section class="fhero" aria-label="Clientes de Referência">
+      <div class="container fhero__inner">
+        <div class="fhero__content">
+          <nav class="contact-breadcrumb" aria-label="Breadcrumb">
+            <span class="contact-breadcrumb__dot" aria-hidden="true"></span>
+            <a href="{% url 'home' %}">O GrupoPIE</a>
+            <span class="contact-breadcrumb__sep" aria-hidden="true">|</span>
+            <strong>Clientes de Referência</strong>
+          </nav>
+          <h1>Temos a confiança dos melhores</h1>
+          <p>Ao longo dos anos, participámos em projetos de grande relevância, colaborando com um conjunto alargado de empresas líderes nos seus setores.</p>
+          <a href="{% url 'contact' %}" class="btn-outline-red">Fale connosco</a>
+        </div>
+        <div class="fhero__image-wrap" aria-hidden="true">
+          <img src="{% static 'images/components/cli-hero.jpg' %}" alt="" class="fhero__image" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         LOGOS GRID — 5 colunas
+    ══════════════════════════════════════ -->
+    <section class="flogos-section" aria-label="Marcas que confiam em nós">
+      <div class="container">
+        <div class="flogos-grid">
+          {% for n in "123456789"|make_list %}
+            <div class="flogo-cell"><img src="{% static 'images/client-logo-'|add:n|add:'.png' %}" alt="Cliente {{ n }}" /></div>
+          {% endfor %}
+          {% for n in "123456789"|make_list %}
+            <div class="flogo-cell"><img src="{% static 'images/client-logo-'|add:n|add:'.png' %}" alt="" aria-hidden="true" /></div>
+          {% endfor %}
+          {% for n in "123456789"|make_list %}
+            <div class="flogo-cell"><img src="{% static 'images/client-logo-'|add:n|add:'.png' %}" alt="" aria-hidden="true" /></div>
+          {% endfor %}
+          {% for n in "123456789"|make_list %}
+            <div class="flogo-cell"><img src="{% static 'images/client-logo-'|add:n|add:'.png' %}" alt="" aria-hidden="true" /></div>
+          {% endfor %}
+          {% for n in "123456789"|make_list %}
+            <div class="flogo-cell"><img src="{% static 'images/client-logo-'|add:n|add:'.png' %}" alt="" aria-hidden="true" /></div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CASOS DE SUCESSO — Preview (3 cards)
+    ══════════════════════════════════════ -->
+    <section class="fcases-preview" aria-labelledby="cases-preview-heading">
+      <div class="container">
+        <p class="fsection-eyebrow">Casos de Sucesso</p>
+        <h2 class="fsection-title" id="cases-preview-heading">Conheça alguns dos nossos casos de sucesso</h2>
+
+        <div class="fcases-grid">
+          <article class="fcase-card">
+            <img class="fcase-card__img" src="{% static 'images/news-1-2149ac.png' %}" alt="Kiosk de pedidos">
+            <h3 class="fcase-card__title">Kiosk de pedidos</h3>
+            <p class="fcase-card__text">Integração com kiosks de atendimento automático para a realização de pedidos.</p>
+            <a href="{% url 'success_cases' %}" class="fcase-card__link">Ler Mais</a>
+          </article>
+          <article class="fcase-card">
+            <img class="fcase-card__img" src="{% static 'images/news-2-8633ce.png' %}" alt="Gestão centralizada">
+            <h3 class="fcase-card__title">Gestão centralizada de cadeias</h3>
+            <p class="fcase-card__text">Backoffice único para gerir todos os estabelecimentos em tempo real.</p>
+            <a href="{% url 'success_cases' %}" class="fcase-card__link">Ler Mais</a>
+          </article>
+          <article class="fcase-card">
+            <img class="fcase-card__img" src="{% static 'images/news-3-6ad800.png' %}" alt="Faturação eletrónica">
+            <h3 class="fcase-card__title">Faturação eletrónica conforme</h3>
+            <p class="fcase-card__text">Emissão de fatura eletrónica em conformidade com a legislação angolana.</p>
+            <a href="{% url 'success_cases' %}" class="fcase-card__link">Ler Mais</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CTA BANNER — Vermelho
+    ══════════════════════════════════════ -->
+    <section class="fcta-banner" aria-label="Saiba mais">
+      <div class="container fcta-banner__inner">
+        <p class="fcta-banner__text">A tecnologia certa para o seu negócio<br>completa, simples e integrada.</p>
+        <a href="{% url 'contact' %}" class="fcta-banner__btn">Quero saber mais</a>
+      </div>
+    </section>
+
+  </main>
+
+  {% include 'components/footer/footer.html' %}
+  {% include 'components/help_chat/help_chat.html' %}
+
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/components/help_chat.js' %}"></script>
+</body>
+</html>
+```
+
+## Relacionados
+- [[tpl-menu]]
+- [[tpl-footer]]
+- [[tpl-help_chat]]

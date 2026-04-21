@@ -25,7 +25,9 @@ from .views import (
     home,
     product_pingwin_bo,
     product_winrest_nx,
+    recruitment,
     solutions,
+    success_case_detail,
     success_cases,
 )
 
@@ -36,6 +38,8 @@ urlpatterns = [
     path('contacto/', contact, name='contact'),
     path('clientes/', clients, name='clients'),
     path('casos-de-sucesso/', success_cases, name='success_cases'),
+    path('casos-de-sucesso/<slug:slug>/', success_case_detail, name='success_case_detail'),
+    path('recrutamento/', recruitment, name='recruitment'),
     path('produtos/winrest-nx/', product_winrest_nx, name='product_winrest_nx'),
     path('contacto/obrigado/', contact_success, name='contact_success'),
     path('produtos/pingwin-bo/', product_pingwin_bo, name='product_pingwin_bo'),

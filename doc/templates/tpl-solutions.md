@@ -1,0 +1,178 @@
+---
+title: Template · solutions
+drawer: templates
+source: templates/solutions.html
+updated: 2026-04-21T01:50:49
+tags: [template, html]
+---
+# Template · solutions
+
+Ficheiro: `templates/solutions.html` (7.3 KB)
+
+## Dependências de template
+
+- [[tpl-menu]]
+- [[tpl-footer]]
+- [[tpl-help_chat]]
+
+## Conteúdo
+
+```html
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soluções | PIE Angola</title>
+  <meta name="description" content="Conheça as soluções da PIE Angola para restauração, fast food, comércio e serviços em Angola. WinRest NX Angola, PingWin BO, WinRest 360.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cabin:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/menu.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/help_chat.css' %}" />
+</head>
+<body class="solutions-page">
+  {% include 'components/menu/menu.html' %}
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="about-eyebrow"><span></span>Soluções</div>
+        <h1>Soluções tecnológicas para Angola</h1>
+        <p>Da faturação ao backoffice, temos tudo o que precisa para gerir o seu negócio em Angola com eficiência, fiabilidade e conformidade fiscal.</p>
+      </div>
+    </section>
+
+    <section class="section solutions-products">
+      <div class="container">
+        <h2>Os nossos produtos principais</h2>
+        <div class="solutions-grid">
+          <article class="solution-card solution-card--featured">
+            <div class="solution-card__image">
+              <img src="{% static 'images/product-winrest.png' %}" alt="WinRest NX Angola">
+            </div>
+            <div class="solution-card__body">
+              <span class="solution-card__badge">Software de Ponto de Venda</span>
+              <h3>WinRest NX Angola</h3>
+              <p>Software de gestão para restaurantes, bares, discotecas e franchising. Multiplataforma, multiprocessador e multilíngue, disponível em 20 países. Desenvolvido especificamente para o mercado angolano.</p>
+              <ul class="solution-card__features">
+                <li>Conformidade fiscal angolana</li>
+                <li>Multiplataforma e multiprocessador</li>
+                <li>Gestão de franchising</li>
+                <li>2 versões: FO PRO e NX Angola</li>
+                <li>Suporte técnico local</li>
+              </ul>
+              <a href="{% url 'product_winrest_nx' %}" class="btn btn-red">Saber mais</a>
+            </div>
+          </article>
+
+          <article class="solution-card solution-card--featured">
+            <div class="solution-card__image">
+              <img src="{% static 'images/product-pingwinfo-home21-4ca840.png' %}" alt="PingWin BO">
+            </div>
+            <div class="solution-card__body">
+              <span class="solution-card__badge">Backoffice de Gestão</span>
+              <h3>PingWin BO</h3>
+              <p>Solução de backoffice multiempresa, multiloja e multi sistema fiscal. Gestão centralizada de stocks, compras e preços para toda a sua cadeia de restaurantes ou lojas em Angola.</p>
+              <ul class="solution-card__features">
+                <li>Multiempresa e multiloja</li>
+                <li>Gestão centralizada de stocks</li>
+                <li>Controlo de compras e preços</li>
+                <li>Multi sistema fiscal</li>
+                <li>Funciona totalmente offline</li>
+              </ul>
+              <a href="{% url 'product_pingwin_bo' %}" class="btn btn-red">Saber mais</a>
+            </div>
+          </article>
+
+          <article class="solution-card solution-card--featured">
+            <div class="solution-card__image">
+              <img src="{% static 'images/product-360city-home21-56586a.png' %}" alt="WinRest 360">
+            </div>
+            <div class="solution-card__body">
+              <span class="solution-card__badge">Solução Global</span>
+              <h3>WinRest 360</h3>
+              <p>A solução completa que liga toda a cadeia de valor da restauração — do fornecedor ao cliente final. Inclui WinOrder, gestão de entregas, fidelização e muito mais.</p>
+              <ul class="solution-card__features">
+                <li>Cadeia de valor completa</li>
+                <li>Modelo de custo zero via WinOrder</li>
+                <li>Integração com deliveries</li>
+                <li>Fidelização de clientes</li>
+                <li>Business intelligence</li>
+              </ul>
+              <a href="{% url 'contact' %}" class="btn btn-soft">Pedir informação</a>
+            </div>
+          </article>
+
+          <article class="solution-card solution-card--featured">
+            <div class="solution-card__image">
+              <img src="{% static 'images/product-bookingall.png' %}" alt="WinRest FO PRO">
+            </div>
+            <div class="solution-card__body">
+              <span class="solution-card__badge">Pequenos Negócios</span>
+              <h3>WinRest FO PRO</h3>
+              <p>Versão simplificada e acessível do WinRest NX Angola, pensada para pequenos restaurantes, cafés e negócios de alimentação que precisam de uma solução eficiente e económica.</p>
+              <ul class="solution-card__features">
+                <li>Interface simplificada</li>
+                <li>Fácil de usar</li>
+                <li>Conformidade fiscal</li>
+                <li>Ideal para pequenos negócios</li>
+                <li>Preço acessível</li>
+              </ul>
+              <a href="{% url 'contact' %}" class="btn btn-soft">Pedir informação</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section solutions-sectors">
+      <div class="container">
+        <div class="about-eyebrow about-eyebrow--dark"><span></span>Setores</div>
+        <h2>Soluções por setor de atividade</h2>
+        <div class="sectors-grid">
+          <article class="sector-card">
+            <img src="{% static 'images/components/home/card-restauracao.svg' %}" alt="Restauração" class="sector-card__icon">
+            <h3>Restauração e Fast Food</h3>
+            <p>Soluções para restaurantes, bares, fast food, snack-bars, pastelarias e franchising</p>
+          </article>
+          <article class="sector-card">
+            <h3>Comércio e Serviços</h3>
+            <p>Gestão de lojas e superfícies comerciais com POS e backoffice integrados</p>
+          </article>
+          <article class="sector-card">
+            <h3>Hotelaria</h3>
+            <p>Integração total entre restauração e serviços hoteleiros</p>
+          </article>
+          <article class="sector-card">
+            <h3>Catering e Eventos</h3>
+            <p>Gestão de grandes volumes em eventos, festivais e catering empresarial</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div class="overlay"></div>
+      <div class="container cta__inner">
+        <h2>Não encontrou o que procura? A nossa equipa ajuda-o a encontrar a melhor solução.</h2>
+        <a href="{% url 'contact' %}" class="btn btn-light">Fale com um especialista</a>
+      </div>
+    </section>
+  </main>
+
+  {% include 'components/footer/footer.html' %}
+  {% include 'components/help_chat/help_chat.html' %}
+
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/components/help_chat.js' %}"></script>
+</body>
+</html>
+```
+
+## Relacionados
+- [[tpl-menu]]
+- [[tpl-footer]]
+- [[tpl-help_chat]]
