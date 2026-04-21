@@ -32,14 +32,14 @@ DEBUG = os.environ.get('DJANGO_DEBUG', 'False').lower() in ('1', 'true', 'yes')
 ALLOWED_HOSTS = [
     h.strip() for h in os.environ.get(
         'DJANGO_ALLOWED_HOSTS',
-        'localhost,127.0.0.1,.fly.dev',
+        'localhost,127.0.0.1,.fly.dev,.pythonanywhere.com',
     ).split(',') if h.strip()
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     o.strip() for o in os.environ.get(
         'DJANGO_CSRF_TRUSTED_ORIGINS',
-        'https://*.fly.dev',
+        'https://*.fly.dev,https://*.pythonanywhere.com',
     ).split(',') if o.strip()
 ]
 
