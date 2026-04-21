@@ -25,7 +25,7 @@
 }
 
 .pie-menu__bar .pie-menu__container {
-  min-height: 118px;
+  min-height: var(--pie-header-h, 96px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -100,16 +100,20 @@
 }
 
 .pie-menu__cloud-btn {
-  padding: 10px 28px;
-  border-radius: 10px;
-  background: #c93131;
+  padding: 12px 35px;
+  border-radius: var(--pie-radius, 8px);
+  background: var(--pie-red, #c93131);
   color: #fff;
   text-decoration: none;
-  font-family: Cabin, sans-serif;
+  font-family: var(--pie-font-sans, Inter, sans-serif);
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
   white-space: nowrap;
   flex-shrink: 0;
+  transition: background var(--pie-dur, 200ms) var(--pie-ease, ease);
+}
+.pie-menu__cloud-btn:hover {
+  background: var(--pie-red-dark, #a82828);
 }
 
 /* Red accent bar under active dropdown */
