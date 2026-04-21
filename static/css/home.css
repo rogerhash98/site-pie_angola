@@ -73,7 +73,7 @@
   font-family: Inter, sans-serif;
   font-size: 16px;
   font-weight: 600;
-  color: #c93131;
+  color: var(--pie-red, #c93131);
   margin: 0 0 12px;
   letter-spacing: 0.02em;
 }
@@ -99,7 +99,7 @@
 .pie-hero__btn {
   display: inline-block;
   padding: 12px 28px;
-  background: #c93131;
+  background: var(--pie-red, #c93131);
   color: #fff;
   font-family: Inter, sans-serif;
   font-size: 16px;
@@ -132,7 +132,7 @@
 }
 .pie-hero-carousel__dot:hover { background: rgba(201, 49, 49, 0.6); }
 .pie-hero-carousel__dot.is-active {
-  background: #c93131;
+  background: var(--pie-red, #c93131);
   transform: scale(1.15);
 }
 
@@ -243,7 +243,7 @@
   font-family: Inter, sans-serif;
   font-size: 15px;
   font-weight: 600;
-  color: #c93131;
+  color: var(--pie-red, #c93131);
   margin: 0;
 }
 
@@ -259,7 +259,7 @@
   font-family: Inter, sans-serif;
   font-size: 15px;
   font-weight: 600;
-  color: #c93131;
+  color: var(--pie-red, #c93131);
   text-decoration: none;
 }
 .pie-prod__link:hover { text-decoration: underline; }
@@ -447,7 +447,7 @@
   font-family: Inter, sans-serif;
   font-size: 15px;
   font-weight: 600;
-  color: #c93131;
+  color: var(--pie-red, #c93131);
   text-decoration: none;
   align-self: flex-start;
 }

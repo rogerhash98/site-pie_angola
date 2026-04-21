@@ -120,7 +120,7 @@
 .pie-menu__accent-bar {
   position: fixed;
   height: 6px;
-  background: #c93131;
+  background: var(--pie-red, #c93131);
   border-radius: 3px 3px 0 0;
   z-index: 93;
   transition: left 0.2s, width 0.2s, opacity 0.15s;
@@ -164,7 +164,7 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 1.21;
-  color: #c93131;
+  color: var(--pie-red, #c93131);
   margin: 0 0 4px;
   text-transform: none;
 }
@@ -180,7 +180,7 @@
 }
 
 .pie-mega__link:hover {
-  color: #c93131;
+  color: var(--pie-red, #c93131);
 }
 
 /* WinRest promo card */
@@ -425,7 +425,7 @@
 .pie-mmenu__leaf:hover,
 .pie-mmenu__leaf:focus,
 .pie-mmenu__leaf--active {
-  color: #c93131;
+  color: var(--pie-red, #c93131);
 }
 
 .pie-mmenu__leaf--active {
@@ -474,7 +474,7 @@
   width: min(246px, 100%);
   min-height: 57px;
   margin: 0 auto;
-  background: #c93131;
+  background: var(--pie-red, #c93131);
   color: #fff;
   text-decoration: none;
   font-weight: 700;

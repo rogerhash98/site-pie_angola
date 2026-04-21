@@ -178,7 +178,7 @@
   word-wrap: break-word;
 }
 .help-chat__msg--out .help-chat__bubble {
-  background: #C93131;
+  background: var(--pie-red, #c93131);
   color: #fff;
 }
 
@@ -222,7 +222,7 @@
   padding: 4px;
   display: inline-flex;
 }
-.help-chat__send:hover svg { stroke: #C93131; }
+.help-chat__send:hover svg { stroke: var(--pie-red, #c93131); }
 
 .help-chat__bottom {
   display: flex;

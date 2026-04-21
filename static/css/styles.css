@@ -1686,7 +1686,7 @@ h3,
   display: inline-block;
   width: 11px;
   height: 11px;
-  background: var(--red, #C93131);
+  background: var(--red, var(--pie-red, #c93131));
   flex-shrink: 0;
 }
 
@@ -1702,7 +1702,7 @@ h3,
 }
 
 .contact-breadcrumb a:hover {
-  color: var(--red, #C93131);
+  color: var(--red, var(--pie-red, #c93131));
 }
 
 .contact-breadcrumb strong {
@@ -1875,7 +1875,7 @@ h3,
 }
 
 .cform__cell:focus-within {
-  border-color: #C93131;
+  border-color: var(--pie-red, #c93131);
   background: #fff;
 }
 
@@ -1916,8 +1916,8 @@ h3,
 }
 
 .cform__privacy input[type="checkbox"]:checked {
-  background: var(--red, #C93131);
-  border-color: var(--red, #C93131);
+  background: var(--red, var(--pie-red, #c93131));
+  border-color: var(--red, var(--pie-red, #c93131));
 }
 
 .cform__privacy input[type="checkbox"]:checked::after {
@@ -1938,12 +1938,12 @@ h3,
 }
 
 .cform__privacy a:hover {
-  color: var(--red, #C93131);
+  color: var(--red, var(--pie-red, #c93131));
 }
 
 .cform__submit {
   flex-shrink: 0;
-  background: var(--red, #C93131);
+  background: var(--red, var(--pie-red, #c93131));
   color: #fff;
   font-family: Inter, sans-serif;
   font-size: 18px;
@@ -2102,7 +2102,7 @@ h3,
   line-height: 1.4;
 }
 .pie-footer__contact-phone strong { font-weight: 600; }
-.pie-footer__contact-phone:hover { color: #C93131; }
+.pie-footer__contact-phone:hover { color: var(--pie-red, #c93131); }
 
 .pie-footer__contact-small {
   font-size: 11px;
@@ -2117,7 +2117,7 @@ h3,
   transition: color 0.2s;
   line-height: 1.5;
 }
-.pie-footer__contact-email:hover { color: #C93131; }
+.pie-footer__contact-email:hover { color: var(--pie-red, #c93131); }
 
 /* ---- divider ---- */
 .pie-footer__divider {
@@ -2164,7 +2164,7 @@ h3,
   display: inline-block;
   width: 12px;
   height: 12px;
-  background: #C93131;
+  background: var(--pie-red, #c93131);
   flex-shrink: 0;
 }
 
@@ -2187,7 +2187,7 @@ h3,
   transition: color 0.2s;
   line-height: 1.9;
 }
-.pie-footer__link:hover { color: #C93131; }
+.pie-footer__link:hover { color: var(--pie-red, #c93131); }
 
 /* ---- CTA block (right side) ---- */
 .pie-footer__cta-block {
@@ -2204,7 +2204,7 @@ h3,
   justify-content: center;
   width: 100%;
   padding: 12px 24px;
-  background: #C93131;
+  background: var(--pie-red, #c93131);
   color: #fff;
   font-family: Inter, sans-serif;
   font-size: 16px;
@@ -2261,7 +2261,7 @@ h3,
   text-decoration: underline;
   transition: color 0.2s;
 }
-.pie-footer__copy-link:hover { color: #C93131; }
+.pie-footer__copy-link:hover { color: var(--pie-red, #c93131); }
 
 @media (max-width: 1200px) {
   .pie-footer__top {
@@ -2370,8 +2370,8 @@ h3,
   justify-content: center;
   padding: 16px 36px;
   background: #fff;
-  color: var(--red, #C93131);
-  border: 2px solid var(--red, #C93131);
+  color: var(--red, var(--pie-red, #c93131));
+  border: 2px solid var(--red, var(--pie-red, #c93131));
   border-radius: 10px;
   font-family: Inter, sans-serif;
   font-weight: 700;
@@ -2380,7 +2380,7 @@ h3,
   transition: background 0.2s, color 0.2s;
 }
 .btn-outline-red:hover {
-  background: var(--red, #C93131);
+  background: var(--red, var(--pie-red, #c93131));
   color: #fff;
 }
 
@@ -2401,7 +2401,7 @@ h3,
   display: inline-block;
   width: 11px;
   height: 11px;
-  background: var(--red, #C93131);
+  background: var(--red, var(--pie-red, #c93131));
   flex-shrink: 0;
 }
 .fsection-title {
@@ -2455,7 +2455,7 @@ h3,
 }
 .fcase-card__link {
   align-self: flex-start;
-  color: var(--red, #C93131);
+  color: var(--red, var(--pie-red, #c93131));
   font-family: Inter, sans-serif;
   font-weight: 700;
   font-size: 15px;
@@ -2474,7 +2474,7 @@ h3,
 /* ── Red CTA banner ────────────────────────────────────── */
 .fcta-banner {
   position: relative;
-  background-color: var(--red, #C93131);
+  background-color: var(--red, var(--pie-red, #c93131));
   background-image:
     linear-gradient(rgba(201, 49, 49, 0.88), rgba(201, 49, 49, 0.88)),
     url("../images/bg-stats-2c3e87.png");
@@ -2522,7 +2522,7 @@ h3,
   justify-content: center;
   padding: 16px 36px;
   background: #fff;
-  color: var(--red, #C93131);
+  color: var(--red, var(--pie-red, #c93131));
   border-radius: 10px;
   font-family: Inter, sans-serif;
   font-weight: 700;
@@ -2744,7 +2744,7 @@ h3,
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 8px;
-  background: var(--red, #C93131);
+  background: var(--red, var(--pie-red, #c93131));
 }
 .fdetail-quote__text {
   margin: 0;
@@ -2822,7 +2822,7 @@ h3,
 .rec-form__select { color: #6D6D6D; }
 .rec-form input[type=text]:focus,
 .rec-form input[type=email]:focus,
-.rec-form__select:focus { border-color: var(--red, #C93131); }
+.rec-form__select:focus { border-color: var(--red, var(--pie-red, #c93131)); }
 .rec-form__select {
   appearance: none;
   -webkit-appearance: none;
@@ -2907,8 +2907,8 @@ h3,
   flex-shrink: 0;
 }
 .rec-form__check input:checked {
-  background: var(--red, #C93131);
-  border-color: var(--red, #C93131);
+  background: var(--red, var(--pie-red, #c93131));
+  border-color: var(--red, var(--pie-red, #c93131));
 }
 .rec-form__check input:checked::after {
   content: "";
@@ -2920,7 +2920,7 @@ h3,
   transform: rotate(45deg);
 }
 .rec-form__submit {
-  background: var(--red, #C93131);
+  background: var(--red, var(--pie-red, #c93131));
   color: #fff;
   border: 0;
   border-radius: 10px;
@@ -2936,7 +2936,7 @@ h3,
 /* ── Stats banner with red overlay ─────────────────────── */
 .rec-stats {
   position: relative;
-  background: var(--red, #C93131);
+  background: var(--red, var(--pie-red, #c93131));
   background-image: linear-gradient(rgba(201, 49, 49, 0.92), rgba(201, 49, 49, 0.92)), url("../images/bg-stats-2c3e87.png");
   background-size: cover;
   background-position: center;
@@ -3060,7 +3060,7 @@ h3,
   font-family: Inter, sans-serif;
   font-weight: 900;
   font-size: clamp(22px, 2.3vw, 36px);
-  color: var(--red, #C93131);
+  color: var(--red, var(--pie-red, #c93131));
   line-height: 1.15;
   letter-spacing: 0.2px;
   white-space: nowrap;
@@ -3118,7 +3118,7 @@ h3,
   position: absolute;
   width: 70px;
   height: 70px;
-  border: 3px solid var(--red, #C93131);
+  border: 3px solid var(--red, var(--pie-red, #c93131));
   z-index: 2;
   pointer-events: none;
 }
@@ -3173,7 +3173,7 @@ h3,
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background: var(--red, #C93131);
+  background: var(--red, var(--pie-red, #c93131));
   display: inline-flex;
   align-items: center;
   justify-content: center;
