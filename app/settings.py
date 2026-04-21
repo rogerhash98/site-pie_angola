@@ -26,8 +26,13 @@ SECRET_KEY = os.environ.get(
     'django-insecure-=3&03fn$-lg^!sb)t^doxza3k51_l#t35^-l2r^tx9vv0_j_&4',
 )
 
+# Modo de execução:
+#   - Desenvolvimento (default): DJANGO_DEBUG não definido ou 'True'.
+#       runserver, sem HTTPS forçado, sem HSTS, sem cookies seguros.
+#   - Produção: definir DJANGO_DEBUG='False' (ver deploy/pythonanywhere_wsgi.py).
+#       Activa SECURE_SSL_REDIRECT, HSTS, cookies seguros.
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_DEBUG', 'False').lower() in ('1', 'true', 'yes')
+DEBUG = os.environ.get('DJANGO_DEBUG', 'True').lower() in ('1', 'true', 'yes')
 
 ALLOWED_HOSTS = [
     h.strip() for h in os.environ.get(
@@ -136,7 +141,10 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 _STATICFILES_BACKEND = os.environ.get(
     'DJANGO_STATICFILES_BACKEND',
-    'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    # Em dev: storage simples (sem manifest, sem collectstatic obrigatório).
+    # Em prod: WhiteNoise comprimido com manifest.
+    'django.contrib.staticfiles.storage.StaticFilesStorage' if DEBUG
+    else 'whitenoise.storage.CompressedManifestStaticFilesStorage',
 )
 STORAGES = {
     'default': {'BACKEND': 'django.core.files.storage.FileSystemStorage'},
@@ -153,13 +161,16 @@ EMAIL_BACKEND = os.environ.get(
 )
 DEFAULT_FROM_EMAIL = os.environ.get('DJANGO_DEFAULT_FROM_EMAIL', 'noreply@pieangola.com')
 
-# Production security headers (active when behind HTTPS proxy like Fly)
+# Production security headers (active when behind HTTPS proxy like PythonAnywhere)
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    SECURE_SSL_REDIRECT = True
+    # SSL redirect opt-out via env (útil para testar prod localmente sem TLS)
+    SECURE_SSL_REDIRECT = os.environ.get(
+        'DJANGO_SECURE_SSL_REDIRECT', 'True'
+    ).lower() in ('1', 'true', 'yes')
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
-    SECURE_HSTS_SECONDS = 60 * 60 * 24 * 30
+    SECURE_HSTS_SECONDS = int(os.environ.get('DJANGO_HSTS_SECONDS', 60 * 60 * 24 * 30))
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
 
