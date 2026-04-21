@@ -1,0 +1,35 @@
+app = "site-pie-angola"
+primary_region = "jnb"
+
+[build]
+
+[env]
+  PORT = "8080"
+  DJANGO_DEBUG = "False"
+  DJANGO_ALLOWED_HOSTS = "site-pie-angola.fly.dev,.fly.dev"
+  DJANGO_CSRF_TRUSTED_ORIGINS = "https://site-pie-angola.fly.dev,https://*.fly.dev"
+  DJANGO_DB_PATH = "/data/db.sqlite3"
+
+[[mounts]]
+  source = "site_pie_angola_data"
+  destination = "/data"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+  [[http_service.checks]]
+    grace_period = "10s"
+    interval = "30s"
+    method = "GET"
+    timeout = "5s"
+    path = "/"
+
+[[vm]]
+  memory = "512mb"
+  cpu_kind = "shared"
+  cpus = 1

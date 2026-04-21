@@ -4,7 +4,13 @@ asgiref==3.11.1
     # via django
 django==6.0.3
     # via pieangola
+gunicorn==25.3.0
+    # via pieangola
+packaging==26.1
+    # via gunicorn
 sqlparse==0.5.5
     # via django
 tzdata==2025.3 ; sys_platform == 'win32'
     # via django
+whitenoise==6.12.0
+    # via pieangola
