@@ -24,6 +24,9 @@ os.environ['DJANGO_CSRF_TRUSTED_ORIGINS'] = (
     'https://rochimuc.pythonanywhere.com,https://*.pythonanywhere.com'
 )
 os.environ['DJANGO_DB_PATH'] = f'{PROJECT_DIR}/db.sqlite3'
+os.environ['DJANGO_STATICFILES_BACKEND'] = (
+    'django.contrib.staticfiles.storage.StaticFilesStorage'
+)
 
 # IMPORTANTE: define DJANGO_SECRET_KEY no painel Web → Environment variables
 # (NUNCA commitar a secret key real no código)

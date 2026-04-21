@@ -11,7 +11,7 @@ PROJECT_NAME="site-pie_angola"
 PROJECT_DIR="$HOME/$PROJECT_NAME"
 VENV_DIR="$HOME/.virtualenvs/pieangola"
 PYTHON_VERSION="3.13"
-REPO_URL="https://github.com/RogerioChimuco/site-pie_angola.git"
+REPO_URL="https://github.com/rogerhash98/site-pie_angola.git"
 
 echo ">>> 1. Clone do repositório"
 if [ ! -d "$PROJECT_DIR" ]; then
@@ -40,7 +40,9 @@ export DJANGO_ALLOWED_HOSTS="rochimuc.pythonanywhere.com,.pythonanywhere.com"
 export DJANGO_DB_PATH="$PROJECT_DIR/db.sqlite3"
 python manage.py migrate --noinput
 
-echo ">>> 5. Collectstatic"
+echo ">>> 5. Collectstatic (sem compressão; PA serve via Nginx)"
+export DJANGO_STATICFILES_BACKEND="django.contrib.staticfiles.storage.StaticFilesStorage"
+rm -rf "$PROJECT_DIR/staticfiles"
 python manage.py collectstatic --noinput
 
 echo ""
